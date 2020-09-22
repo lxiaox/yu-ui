@@ -1,15 +1,15 @@
 <template>
-<!--<img alt="Vue logo" src="./assets/logo.png" />-->
-<My />
+<div>
+  导航栏 |
+  <router-link to="/my">my</router-link> |
+  <router-link to="/my2">my2</router-link>
+</div>
+<hr>
+<router-view />
 </template>
 
 <script>
-import My from './components/My.vue'
-
 export default {
-  name: 'App',
-  components: {
-    My
-  }
-}
+  name: "App",
+};
 </script>
