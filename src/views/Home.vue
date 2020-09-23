@@ -1,11 +1,11 @@
 <template>
 <div>
-  美好的一天
+  Home
 </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
-  name: 'My',
+
 }
 </script>

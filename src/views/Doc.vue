@@ -1,9 +1,11 @@
 <template>
-<router-view />
+<div>
+  Doc
+</div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
-  name: "App",
-};
+
+}
 </script>
