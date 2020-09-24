@@ -2,8 +2,12 @@
 <div class="topnav">
   <div class="logo">LOGO</div>
   <ul class="menu">
-    <li>首页</li>
-    <li>文档</li>
+    <li>
+      <router-link to="/"> 首页 </router-link>
+    </li>
+    <li>
+      <router-link to="/doc"> 文档 </router-link>
+    </li>
   </ul>
 </div>
 </template>
@@ -16,14 +20,18 @@ export default {
 
 <style lang="scss">
 .topnav {
-  background: darkcyan;
+  background: #11bbaacc;
   display: flex;
   justify-content: space-between;
   padding: 16px;
+  color: white;
+  z-index: 10;
+  position: relative;
 
   >.logo {
     margin-right: auto;
     vertical-align: middle;
+    cursor: pointer;
   }
 
   >.menu {
@@ -33,6 +41,10 @@ export default {
 
     >li {
       margin-right: 16px;
+
+      >a:hover {
+        text-decoration: underline white;
+      }
     }
   }
 }

@@ -1,12 +1,14 @@
 <template>
-<Topnav />
-<div class="banner">
-  <h1>小鱼UI</h1>
-  <h2>基于 VUE3 的 UI 框架</h2>
-  <p class="actions">
-    <a href="https://github.com" target="_blank">GitHub</a>
-    <router-link to="/doc">开始</router-link>
-  </p>
+<div>
+  <Topnav />
+  <div class="banner">
+    <h1>小鱼UI</h1>
+    <h2>基于 VUE3 的 UI 框架</h2>
+    <p class="actions">
+      <a href="https://github.com" target="_blank">GitHub</a>
+      <router-link to="/doc">开始</router-link>
+    </p>
+  </div>
 </div>
 </template>
 
@@ -40,6 +42,11 @@ export default {
       line-height: $h;
       border-radius: $h/2;
       padding: 0 8px;
+      border: 1px solid transparent;
+
+      &:hover {
+        border-color: #11bbaacc;
+      }
     }
   }
 }
