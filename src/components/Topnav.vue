@@ -16,7 +16,7 @@ export default {
 
 <style lang="scss">
 .topnav {
-  background: pink;
+  background: darkcyan;
   display: flex;
   justify-content: space-between;
   padding: 16px;
