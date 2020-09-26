@@ -2,7 +2,9 @@
 <div class="topnav-wrapper">
   <div class="topnav">
     <span class="toggle-aside-btn" @click="toggleAsideVisible"></span>
-    <div class="logo">LOGO</div>
+    <div class="logo">
+      <router-link to="/"> LOGO </router-link>
+    </div>
     <ul class="menu">
       <li>
         <router-link to="/"> 首页 </router-link>
