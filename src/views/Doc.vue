@@ -74,6 +74,12 @@ aside {
   }
 }
 
+main {
+  margin-top: 54px;
+  padding: 20px;
+  overflow: auto;
+}
+
 @media (min-width:551px) {
   main {
     padding-left: 170px;
