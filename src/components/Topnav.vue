@@ -37,8 +37,10 @@ export default {
 .topnav-wrapper {
   background: #fff;
   z-index: 10;
-  position: relative;
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .topnav {
@@ -48,7 +50,6 @@ export default {
   padding: 16px;
   color: white;
   position: relative;
-  // z-index: 10;
 
   >.logo {
     margin-right: auto;
