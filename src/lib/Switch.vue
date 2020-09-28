@@ -36,6 +36,7 @@ button {
   outline: none;
   border: none;
   cursor: pointer;
+  transition: all .3s;
 
   >span {
     width: $h2;
@@ -45,6 +46,11 @@ button {
     position: absolute;
     top: 2px;
     left: 2px;
+    transition: all .3s;
+  }
+
+  &.checked {
+    background: #5fe676;
   }
 
   &.checked>span {
