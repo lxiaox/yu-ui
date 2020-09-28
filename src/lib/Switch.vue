@@ -1,14 +1,15 @@
 <template>
 <div>
-  <Switch />
+  <button><span>switch组件</span></button>
 </div>
 </template>
 
 <script lang="ts">
-import Switch from '../lib/Switch.vue'
 export default {
-  components: {
-    Switch
-  }
+
 }
 </script>
+
+<style lang="scss">
+
+</style>
