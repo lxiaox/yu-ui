@@ -2,9 +2,8 @@
 <div class="topnav-wrapper">
   <div class="topnav">
     <span class="toggle-aside-btn" @click="toggleAsideVisible"></span>
-    <div class="logo">
-      <router-link to="/"> LOGO </router-link>
-    </div>
+    <router-link class="logo" to="/">
+    </router-link>
     <ul class="menu">
       <li>
         <router-link to="/"> 首页 </router-link>
@@ -36,6 +35,8 @@ export default {
 </script>
 
 <style lang="scss">
+$h: 30px;
+
 .topnav-wrapper {
   background: #fff;
   z-index: 10;
@@ -49,7 +50,7 @@ export default {
   background: #11bbaacc;
   display: flex;
   justify-content: space-between;
-  padding: 16px;
+  padding: 12px;
   color: white;
   position: relative;
 
@@ -57,7 +58,10 @@ export default {
     margin-right: auto;
     vertical-align: middle;
     cursor: pointer;
-    line-height: 22px;
+    width: $h;
+    height: $h;
+    background: url(../assets/fishLogo.png) center center no-repeat;
+    background-size: $h;
   }
 
   >.menu {
@@ -67,6 +71,7 @@ export default {
 
     >li {
       margin-right: 16px;
+      line-height: $h;
 
       >a:hover {
         text-decoration: underline white;
