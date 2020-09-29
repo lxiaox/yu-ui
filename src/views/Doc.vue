@@ -58,6 +58,7 @@ aside {
   left: 0;
   padding-top: 70px;
   transition: all .3s;
+  z-index: 9;
 
   >h2 {
     margin-bottom: 8px;
