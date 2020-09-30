@@ -8,7 +8,7 @@ import DialogDoc from './components/DialogDoc.vue'
 import TabsDoc from './components/TabsDoc.vue'
 const history = createWebHashHistory();
 const router = createRouter({
-  history: createWebHashHistory(),
+  history,
   routes:[
     {    path:'/',component:Home  },
     {    path:'/doc',component:Doc,
