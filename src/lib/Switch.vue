@@ -27,6 +27,7 @@ export default {
 <style lang="scss">
 $h1: 22px;
 $h2: $h1 - 4px;
+$w: 6px;
 
 button {
   width: $h1*2;
@@ -56,6 +57,16 @@ button {
 
   &.checked>span {
     left: calc(100% - #{$h2} - 2px);
+  }
+
+  //active：鼠标按下没松开的时候变宽；focus：鼠标按下松开之后变宽并一直保持
+  &:active>span {
+    width: $h2 + $w;
+  }
+
+  &.checked:active>span {
+    width: $h2 + $w;
+    margin-left: -$w;
   }
 
 }
