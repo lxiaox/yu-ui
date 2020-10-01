@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $h1: 22px;
 $h2: $h1 - 4px;
 $w: 6px;
