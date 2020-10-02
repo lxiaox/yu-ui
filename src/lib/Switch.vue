@@ -1,6 +1,6 @@
 <template>
 <div>
-  <button :class="{'checked':value}" @click="toggle"><span></span></button>
+  <span class="yu-switch" :class="{'checked':value}" @click="toggle"><span class="yu-switch-inner"></span></span>
 </div>
 </template>
 
@@ -24,12 +24,13 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h1: 22px;
 $h2: $h1 - 4px;
 $w: 6px;
 
-button {
+.yu-switch {
+  display: inline-block;
   width: $h1*2;
   height: $h1;
   background: #ddd;
@@ -40,7 +41,7 @@ button {
   cursor: pointer;
   transition: all .3s;
 
-  >span {
+  >.yu-switch-inner {
     width: $h2;
     height: $h2;
     border-radius: $h2/2;
@@ -55,16 +56,16 @@ button {
     background: #5fe676;
   }
 
-  &.checked>span {
+  &.checked>.yu-switch-inner {
     left: calc(100% - #{$h2} - 2px);
   }
 
   //active：鼠标按下没松开的时候变宽；focus：鼠标按下松开之后变宽并一直保持
-  &:active>span {
+  &:active>.yu-switch-inner {
     width: $h2 + $w;
   }
 
-  &.checked:active>span {
+  &.checked:active>.yu-switch-inner {
     width: $h2 + $w;
     margin-left: -$w;
   }

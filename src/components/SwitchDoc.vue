@@ -21,3 +21,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+button {
+  >span {
+    background: red;
+  }
+}
+</style>
