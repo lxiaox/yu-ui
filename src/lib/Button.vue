@@ -14,15 +14,19 @@ export default {
       type: String,
       default: 'default',
     },
-
+    size: {
+      type: String,
+    }
   },
   setup(props) {
     const {
-      theme
+      theme,
+      size
     } = props
     const classes = computed(() => {
       return {
         [`yu-btn-theme-${theme}`]: theme,
+        [`yu-btn-size-${size}`]: size,
       }
     })
     return {
@@ -42,7 +46,7 @@ $red: #f56c6c;
 $red-hover: #f78989;
 
 .yu-btn {
-  padding: 12px 20px;
+  padding: 10px 20px;
   border-radius: 4px;
   background: #fff;
   outline: none;
@@ -50,7 +54,7 @@ $red-hover: #f78989;
   color: #555;
   font-weight: 400;
   font-size: 14px;
-  line-height: 14px;
+  line-height: 1;
   white-space: nowrap;
   text-align: center;
   vertical-align: middle;
@@ -114,6 +118,20 @@ $red-hover: #f78989;
       background: $red-hover;
       border-color: $red-hover;
     }
+  }
+
+  &.yu-btn-size-big {
+    padding: 12px 20px;
+  }
+
+  &.yu-btn-size-small {
+    padding: 9px 16px;
+    font-size: 12px;
+  }
+
+  &.yu-btn-size-mini {
+    padding: 7px 16px;
+    font-size: 12px;
   }
 }
 </style>

@@ -10,6 +10,11 @@
   <Button theme="success">按钮</Button>
   <Button theme="warning">按钮</Button>
   <Button theme="error">按钮</Button>
+  <h1>不同尺寸</h1>
+  <Button size="big">大型按钮</Button>
+  <Button>默认按钮</Button>
+  <Button size="small">小型按钮</Button>
+  <Button size="mini">超小按钮</Button>
 </div>
 </template>
 
