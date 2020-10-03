@@ -15,6 +15,15 @@
   <Button>默认按钮</Button>
   <Button size="small">小型按钮</Button>
   <Button size="mini">超小按钮</Button>
+  <h1>禁用状态</h1>
+  <Button disabled>禁用按钮</Button>
+  <Button theme="text" disabled>禁用文本按钮</Button>
+  <Button theme="link" disabled>禁用链接按钮</Button>
+  <br><br>
+  <Button theme="primary" disabled>主要按钮</Button>
+  <Button theme="success" disabled>成功按钮</Button>
+  <Button theme="warning" disabled>警告按钮</Button>
+  <Button theme="error" disabled>危险按钮</Button>
 </div>
 </template>
 

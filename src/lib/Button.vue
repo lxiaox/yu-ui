@@ -1,5 +1,5 @@
 <template>
-<button class="yu-btn" :class="classes">
+<button class="yu-btn" :class="classes" :disabled="disabled">
   <slot />
 </button>
 </template>
@@ -16,6 +16,10 @@ export default {
     },
     size: {
       type: String,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     }
   },
   setup(props) {
@@ -38,12 +42,11 @@ export default {
 
 <style lang="scss">
 $blue: #57a1f1;
+$blue2:#2d8cf0;
 $green: #67c23a;
-$green-hover: #85ce61;
 $yellow: #e6a23c;
-$yellow-hover: #ebb563;
 $red: #f56c6c;
-$red-hover: #f78989;
+$grey: grey;
 
 .yu-btn {
   padding: 10px 20px;
@@ -66,15 +69,28 @@ $red-hover: #f78989;
     border-color: $blue;
   }
 
+  &[disabled] {
+    cursor: not-allowed;
+    color: $grey;
+    border-color: $grey;
+  }
+
   &.yu-btn-theme-primary {
-    background-color: #2d8cf0;
-    border-color: #2d8cf0;
+    background-color: $blue2;
+    border-color: $blue2;
     color: #fff;
 
-    &:hover {
-      background-color: #57a3f3;
-      border-color: #57a3f3;
+    &:hover,
+    &:focus {
+      background-color: lighten($blue2, 10%);
+      border-color: lighten($blue2, 10%);
       color: #fff;
+    }
+
+    &[disabled] {
+      color: #fff;
+      background: lighten($blue2, 15%);
+      border-color: lighten($blue2, 15%);
     }
   }
 
@@ -85,6 +101,10 @@ $red-hover: #f78989;
   &.yu-btn-theme-link {
     border-color: transparent;
     color: $blue;
+
+    &[disabled] {
+      color: lighten($blue, 15%)
+    }
   }
 
   &.yu-btn-theme-success {
@@ -92,9 +112,16 @@ $red-hover: #f78989;
     border-color: $green;
     color: #fff;
 
-    &:hover {
-      background: $green-hover;
-      border-color: $green-hover;
+    &:hover,
+    &:focus {
+      background: lighten($green, 10%);
+      border-color: lighten($green, 10%);
+    }
+
+    &[disabled] {
+      color: #fff;
+      background: lighten($green, 15%);
+      border-color: lighten($green, 15%);
     }
   }
 
@@ -103,9 +130,16 @@ $red-hover: #f78989;
     border-color: $yellow;
     color: #fff;
 
-    &:hover {
-      background: $yellow-hover;
-      border-color: $yellow-hover;
+    &:hover,
+    &:focus {
+      background: lighten($yellow, 10%);
+      border-color: lighten($yellow, 10%);
+    }
+
+    &[disabled] {
+      color: #fff;
+      background: lighten($yellow, 15%);
+      border-color: lighten($yellow, 15%);
     }
   }
 
@@ -114,9 +148,16 @@ $red-hover: #f78989;
     border-color: $red;
     color: #fff;
 
-    &:hover {
-      background: $red-hover;
-      border-color: $red-hover;
+    &:hover,
+    &:focus {
+      background: lighten($red, 10%);
+      border-color: lighten($red, 10%);
+    }
+
+    &[disabled] {
+      color: #fff;
+      background: lighten($red, 15%);
+      border-color: lighten($red, 15%);
     }
   }
 
@@ -132,6 +173,11 @@ $red-hover: #f78989;
   &.yu-btn-size-mini {
     padding: 7px 16px;
     font-size: 12px;
+  }
+
+  &.yu-btn-theme-text[disabled],
+  &.yu-btn-theme-link[disabled] {
+    border-color: transparent;
   }
 }
 </style>
