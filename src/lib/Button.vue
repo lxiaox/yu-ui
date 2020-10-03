@@ -1,11 +1,35 @@
 <template>
-<button class="yu-btn">
+<button class="yu-btn" :class="classes">
   <slot />
 </button>
 </template>
 
 <script lang="ts">
-export default {}
+import {
+  computed
+} from 'vue'
+export default {
+  props: {
+    theme: {
+      type: String,
+      default: 'default',
+    },
+
+  },
+  setup(props) {
+    const {
+      theme
+    } = props
+    const classes = computed(() => {
+      return {
+        [`yu-btn-theme-${theme}`]: theme,
+      }
+    })
+    return {
+      classes
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -30,5 +54,7 @@ $blue: #57a1f1;
     color: $blue;
     border-color: $blue;
   }
+
+  &.yu-btn-theme-default {}
 }
 </style>
