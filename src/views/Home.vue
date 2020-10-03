@@ -1,7 +1,7 @@
 <template>
 <div>
   <Topnav />
-  <div class="banner">
+  <div class="content">
     <h1>小鱼UI</h1>
     <h2>基于 VUE3 的 UI 框架</h2>
     <p class="actions">
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.banner {
+.content {
   padding: 100px 0;
   display: flex;
   justify-content: center;
