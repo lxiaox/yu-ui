@@ -24,6 +24,11 @@
   <Button theme="success" disabled>成功按钮</Button>
   <Button theme="warning" disabled>警告按钮</Button>
   <Button theme="error" disabled>危险按钮</Button>
+  <h1>加载中</h1>
+  <Button theme="primary" loading>加载中</Button>
+  <Button loading>加载中</Button>
+  <Button size="small" loading>加载中</Button>
+  <Button size="mini" loading>加载中</Button>
 </div>
 </template>
 

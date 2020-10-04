@@ -1,5 +1,6 @@
 <template>
 <button class="yu-btn" :class="classes" :disabled="disabled">
+  <span class="yu-btn-loading" v-if="loading"></span>
   <slot />
 </button>
 </template>
@@ -18,6 +19,10 @@ export default {
       type: String,
     },
     disabled: {
+      type: Boolean,
+      default: false,
+    },
+    loading: {
       type: Boolean,
       default: false,
     }
@@ -47,6 +52,8 @@ $green: #67c23a;
 $yellow: #e6a23c;
 $red: #f56c6c;
 $grey: grey;
+$size: 14px;
+$size2: 12px;
 
 .yu-btn {
   padding: 10px 20px;
@@ -56,7 +63,7 @@ $grey: grey;
   border: 1px solid #d9d9d9;
   color: #555;
   font-weight: 400;
-  font-size: 14px;
+  font-size: $size;
   line-height: 1;
   white-space: nowrap;
   text-align: center;
@@ -162,22 +169,59 @@ $grey: grey;
   }
 
   &.yu-btn-size-big {
-    padding: 12px 20px;
+    padding: 12px 24px;
+    font-size: 16px;
   }
 
   &.yu-btn-size-small {
-    padding: 9px 16px;
-    font-size: 12px;
+    padding: 9px 15px;
+    font-size: $size2;
   }
 
   &.yu-btn-size-mini {
-    padding: 7px 16px;
-    font-size: 12px;
+    padding: 7px 15px;
+    font-size: $size2;
   }
 
-  &.yu-btn-theme-text[disabled],
-  &.yu-btn-theme-link[disabled] {
-    border-color: transparent;
+  .yu-btn-loading {
+    display: inline-block;
+    vertical-align: top;
+    width: $size;
+    height: $size;
+    border: 1px solid;
+    border-color: $blue $blue $blue transparent;
+    border-radius: $size;
+    animation: yu-btn-loading-circle 1s infinite linear;
+    margin-right: 4px;
+  }
+
+  &.yu-btn-size-small,
+  &.yu-btn-size-mini {
+    .yu-btn-loading {
+      width: $size2;
+      height: $size2;
+      border-radius: $size2;
+    }
+  }
+
+  &.yu-btn-theme-success,
+  &.yu-btn-theme-warning,
+  &.yu-btn-theme-error,
+  &.yu-btn-theme-primary {
+    .yu-btn-loading {
+      border-color: #fff #fff #fff transparent;
+    }
+  }
+
+  @keyframes yu-btn-loading-circle {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+
+    }
   }
 }
 </style>
