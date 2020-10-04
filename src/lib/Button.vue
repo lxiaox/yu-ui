@@ -25,17 +25,23 @@ export default {
     loading: {
       type: Boolean,
       default: false,
-    }
+    },
+    round: {
+      type: Boolean,
+      default: false,
+    },
   },
   setup(props) {
     const {
       theme,
-      size
+      size,
+      round,
     } = props
     const classes = computed(() => {
       return {
         [`yu-btn-theme-${theme}`]: theme,
         [`yu-btn-size-${size}`]: size,
+        [`yu-btn-round`]: round,
       }
     })
     return {
@@ -53,6 +59,7 @@ $yellow: #e6a23c;
 $red: #f56c6c;
 $grey: grey;
 $size: 14px;
+$size1: 16px;
 $size2: 12px;
 
 .yu-btn {
@@ -170,7 +177,7 @@ $size2: 12px;
 
   &.yu-btn-size-big {
     padding: 12px 24px;
-    font-size: 16px;
+    font-size: $size1;
   }
 
   &.yu-btn-size-small {
@@ -223,5 +230,10 @@ $size2: 12px;
 
     }
   }
+
+  &.yu-btn-round {
+    border-radius: $size1*2;
+  }
+
 }
 </style>
