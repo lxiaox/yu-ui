@@ -1,6 +1,6 @@
 <template>
 <div>
-  <span class="yu-switch" :class="{'yu-checked':value}" @click="toggle"><span class="yu-switch-inner"></span></span>
+  <span class="yu-switch" :class="{'yu-active':value}" @click="toggle"><span class="yu-switch-inner"></span></span>
 </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $h1: 22px;
 $h2: $h1 - 4px;
 $w: 6px;
@@ -52,11 +52,11 @@ $w: 6px;
     transition: all .3s;
   }
 
-  &.yu-checked {
+  &.yu-active {
     background: #5fe676;
   }
 
-  &.yu-checked>.yu-switch-inner {
+  &.yu-active>.yu-switch-inner {
     left: calc(100% - #{$h2} - 2px);
   }
 
@@ -65,7 +65,7 @@ $w: 6px;
     width: $h2 + $w;
   }
 
-  &.yu-checked:active>.yu-switch-inner {
+  &.yu-active:active>.yu-switch-inner {
     width: $h2 + $w;
     margin-left: -$w;
   }
