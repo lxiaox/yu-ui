@@ -83,9 +83,13 @@ $size2: 12px; // 小、超小按钮
     opacity: .6;
   }
 
-  &.yu-btn-theme-default:not(:disabled):hover {
-    color: $blue;
-    border-color: $blue;
+  &.yu-btn-theme-default {
+
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
+      color: $blue;
+      border-color: $blue;
+    }
   }
 
   &.yu-btn-theme-primary {
@@ -104,14 +108,20 @@ $size2: 12px; // 小、超小按钮
   &.yu-btn-theme-text {
     border-color: transparent;
 
-    &:not(:disabled):hover {
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
       color: $blue;
     }
   }
 
   &.yu-btn-theme-link {
     border-color: transparent;
-    color: $blue;
+    color: $blue2;
+
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
+      color: lighten($blue2, 15%);
+    }
   }
 
   &.yu-btn-theme-success {
