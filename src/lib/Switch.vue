@@ -1,9 +1,12 @@
 <template>
-<span class="yu-switch" :class="{'yu-active':value}" @click="toggle" :style="{'background':value?activeColor:inactiveColor}"><span class="yu-switch-inner"></span></span>
+<span class="yu-switch" :class="classes" @click="toggle" :style="{'background':value?activeColor:inactiveColor}">
+  <span class="yu-switch-inner"></span>
+</span>
 </template>
 
 <script lang="ts">
 import {
+  computed,
   ref
 } from 'vue'
 
@@ -12,30 +15,43 @@ export default {
     value: Boolean,
     activeColor: String,
     inactiveColor: String,
+    disabled: {
+      type: Boolean,
+      default: false,
+    }
   },
   setup(props, context) {
     const toggle = () => {
+      if (props.disabled) return
       context.emit('update:value', !props.value)
     }
+    const classes = computed(() => {
+      return {
+        ['active']: props.value,
+        ['is-disabled']: props.disabled
+      }
+    })
     return {
-      toggle
+      toggle,
+      classes
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h1: 22px;
 $h2: $h1 - 4px;
 $w: 6px;
 $blue:#409eff;
 $green:#5fe676;
+$grey: #ddd;
 
 .yu-switch {
   display: inline-block;
   width: $h1*2;
   height: $h1;
-  background: #ddd;
+  background: $grey;
   border-radius: $h1/2;
   position: relative;
   outline: none;
@@ -54,11 +70,11 @@ $green:#5fe676;
     transition: all .3s;
   }
 
-  &.yu-active {
+  &.active {
     background: $blue;
   }
 
-  &.yu-active>.yu-switch-inner {
+  &.active>.yu-switch-inner {
     left: calc(100% - #{$h2} - 2px);
   }
 
@@ -67,9 +83,23 @@ $green:#5fe676;
     width: $h2 + $w;
   }
 
-  &.yu-active:active>.yu-switch-inner {
+  &.active:active>.yu-switch-inner {
     width: $h2 + $w;
     margin-left: -$w;
+  }
+
+  &.is-disabled {
+    opacity: .6;
+    cursor: not-allowed;
+
+    .yu-switch-inner {
+      width: $h2;
+    }
+
+    &.active .yu-switch-inner {
+      width: $h2;
+      margin-left: 0;
+    }
   }
 
 }
