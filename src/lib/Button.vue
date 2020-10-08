@@ -58,9 +58,9 @@ $green: #67c23a;
 $yellow: #e6a23c;
 $red: #f56c6c;
 $grey: grey;
-$size: 14px;
-$size1: 16px;
-$size2: 12px;
+$size: 14px; // 默认大小
+$size1: 16px; // 大按钮
+$size2: 12px; // 小、超小按钮
 
 .yu-btn {
   padding: 10px 20px;
@@ -78,15 +78,15 @@ $size2: 12px;
   cursor: pointer;
   transition: all 250ms;
 
-  &:hover {
+  &:not(:disabled):hover {
     color: $blue;
     border-color: $blue;
   }
 
   &[disabled] {
     cursor: not-allowed;
-    color: $grey;
-    border-color: $grey;
+    opacity: .6;
+
   }
 
   &.yu-btn-theme-primary {
@@ -94,17 +94,11 @@ $size2: 12px;
     border-color: $blue2;
     color: #fff;
 
-    &:hover,
-    &:focus {
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
       background-color: lighten($blue2, 10%);
       border-color: lighten($blue2, 10%);
       color: #fff;
-    }
-
-    &[disabled] {
-      color: #fff;
-      background: lighten($blue2, 15%);
-      border-color: lighten($blue2, 15%);
     }
   }
 
@@ -115,10 +109,6 @@ $size2: 12px;
   &.yu-btn-theme-link {
     border-color: transparent;
     color: $blue;
-
-    &[disabled] {
-      color: lighten($blue, 15%)
-    }
   }
 
   &.yu-btn-theme-success {
@@ -126,16 +116,10 @@ $size2: 12px;
     border-color: $green;
     color: #fff;
 
-    &:hover,
-    &:focus {
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
       background: lighten($green, 10%);
       border-color: lighten($green, 10%);
-    }
-
-    &[disabled] {
-      color: #fff;
-      background: lighten($green, 15%);
-      border-color: lighten($green, 15%);
     }
   }
 
@@ -144,16 +128,10 @@ $size2: 12px;
     border-color: $yellow;
     color: #fff;
 
-    &:hover,
-    &:focus {
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
       background: lighten($yellow, 10%);
       border-color: lighten($yellow, 10%);
-    }
-
-    &[disabled] {
-      color: #fff;
-      background: lighten($yellow, 15%);
-      border-color: lighten($yellow, 15%);
     }
   }
 
@@ -162,16 +140,10 @@ $size2: 12px;
     border-color: $red;
     color: #fff;
 
-    &:hover,
-    &:focus {
+    &:not(:disabled):hover,
+    &:not(:disabled):focus {
       background: lighten($red, 10%);
       border-color: lighten($red, 10%);
-    }
-
-    &[disabled] {
-      color: #fff;
-      background: lighten($red, 15%);
-      border-color: lighten($red, 15%);
     }
   }
 
