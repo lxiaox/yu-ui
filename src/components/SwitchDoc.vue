@@ -1,6 +1,10 @@
 <template>
 <div>
-  <Switch v-model:value="value" />
+  <h1>Switch</h1>
+  <Switch v-model:value="value1" />
+  <br><br>
+  <h1>自定义颜色</h1>
+  <Switch v-model:value="value2" activeColor="#5fe676" inactiveColor="#ff4949" />
 </div>
 </template>
 
@@ -14,18 +18,20 @@ export default {
     Switch
   },
   setup() {
-    const value = ref(false)
+    const value1 = ref(false)
+    const value2 = ref(false)
+    const value3 = ref(false)
     return {
-      value
+      value1,
+      value2,
+      value3
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-button {
-  >span {
-    background: red;
-  }
+.yu-switch+.yu-switch {
+  margin-left: 20px;
 }
 </style>

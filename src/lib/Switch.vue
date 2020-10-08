@@ -1,7 +1,5 @@
 <template>
-<div>
-  <span class="yu-switch" :class="{'yu-active':value}" @click="toggle"><span class="yu-switch-inner"></span></span>
-</div>
+<span class="yu-switch" :class="{'yu-active':value}" @click="toggle" :style="{'background':value?activeColor:inactiveColor}"><span class="yu-switch-inner"></span></span>
 </template>
 
 <script lang="ts">
@@ -12,6 +10,8 @@ import {
 export default {
   props: {
     value: Boolean,
+    activeColor: String,
+    inactiveColor: String,
   },
   setup(props, context) {
     const toggle = () => {
@@ -28,6 +28,8 @@ export default {
 $h1: 22px;
 $h2: $h1 - 4px;
 $w: 6px;
+$blue:#409eff;
+$green:#5fe676;
 
 .yu-switch {
   display: inline-block;
@@ -53,7 +55,7 @@ $w: 6px;
   }
 
   &.yu-active {
-    background: #5fe676;
+    background: $blue;
   }
 
   &.yu-active>.yu-switch-inner {
