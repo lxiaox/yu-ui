@@ -78,15 +78,14 @@ $size2: 12px; // 小、超小按钮
   cursor: pointer;
   transition: all 250ms;
 
-  &:not(:disabled):hover {
-    color: $blue;
-    border-color: $blue;
-  }
-
   &[disabled] {
     cursor: not-allowed;
     opacity: .6;
+  }
 
+  &.yu-btn-theme-default:not(:disabled):hover {
+    color: $blue;
+    border-color: $blue;
   }
 
   &.yu-btn-theme-primary {
@@ -104,6 +103,10 @@ $size2: 12px; // 小、超小按钮
 
   &.yu-btn-theme-text {
     border-color: transparent;
+
+    &:not(:disabled):hover {
+      color: $blue;
+    }
   }
 
   &.yu-btn-theme-link {
