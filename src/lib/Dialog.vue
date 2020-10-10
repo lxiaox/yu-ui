@@ -1,17 +1,124 @@
 <template>
-<div v-show="visible">
-  Dialogkkkk
+<div class="yu-dialog-overlay" v-show="visible">
+  <div class="yu-dialog-wrapper">
+    <div class="yu-dialog">
+      <header>
+        <span class="yu-dialog-title">标题</span>
+        <span class="yu-dialog-close"></span>
+      </header>
+      <main>内容</main>
+      <footer>
+        <Button>取消</Button>
+        <Button theme="primary">确认</Button>
+      </footer>
+    </div>
+  </div>
 </div>
 </template>
 
 <script lang="ts">
+import Button from "./Button.vue"
 export default {
+  components: {
+    Button
+  },
   props: {
-    visible: Boolean,
+    visible: {
+      type: Boolean,
+      default: false,
+    }
+  },
+  setup(props) {
+    console.log(props.visible)
   }
 }
 </script>
 
 <style lang="scss">
-  
+$border-grey:#ddd;
+$blue:#2d8cf0;
+
+.yu-dialog-overlay {
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: fade_out(black, 0.5);
+
+  .yu-dialog-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .yu-dialog {
+      background: #fff;
+      border-radius: 5px;
+      width: 300px;
+      box-shadow: 0 0 10px fade_out(black, 0.5);
+
+      &>header {
+        padding: 14px 16px;
+        border-bottom: 1px solid $border-grey;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .yu-dialog-title {
+          font-size: 20px;
+        }
+
+        .yu-dialog-close {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          cursor: pointer;
+          position: relative;
+
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: #111;
+            top: 50%;
+            left: 50%;
+          }
+
+          &:hover::before,
+          &:hover::after {
+            background: $blue;
+          }
+
+          &::before {
+            transform: translate(-50%, -50%) rotate(-45deg);
+          }
+
+          &::after {
+            transform: translate(-50%, -50%) rotate(45deg);
+          }
+        }
+      }
+
+      &>main {
+        padding: 14px 16px;
+      }
+
+      &>footer {
+        padding: 14px 16px;
+        border-top: 1px solid $border-grey;
+        text-align: right;
+
+        .yu-btn {
+          margin-left: 20px;
+        }
+      }
+
+    }
+  }
+}
 </style>
