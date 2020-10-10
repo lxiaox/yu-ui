@@ -27,8 +27,8 @@ export default {
     }
     const classes = computed(() => {
       return {
-        ['active']: props.value,
-        ['is-disabled']: props.disabled
+        ['yu-switch-active']: props.value,
+        ['yu-switch-is-disabled']: props.disabled
       }
     })
     return {
@@ -70,11 +70,11 @@ $grey: #ddd;
     transition: all .3s;
   }
 
-  &.active {
+  &.yu-switch-active {
     background: $blue;
   }
 
-  &.active>.yu-switch-inner {
+  &.yu-switch-active>.yu-switch-inner {
     left: calc(100% - #{$h2} - 2px);
   }
 
@@ -83,12 +83,12 @@ $grey: #ddd;
     width: $h2 + $w;
   }
 
-  &.active:active>.yu-switch-inner {
+  &.yu-switch-active:active>.yu-switch-inner {
     width: $h2 + $w;
     margin-left: -$w;
   }
 
-  &.is-disabled {
+  &.yu-switch-is-disabled {
     opacity: .6;
     cursor: not-allowed;
 
@@ -96,7 +96,7 @@ $grey: #ddd;
       width: $h2;
     }
 
-    &.active .yu-switch-inner {
+    &.yu-switch-active .yu-switch-inner {
       width: $h2;
       margin-left: 0;
     }
