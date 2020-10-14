@@ -1,15 +1,15 @@
 <template>
-<div class="yu-dialog-overlay" v-show="visible">
+<div class="yu-dialog-overlay" @click.self="close" v-if="visible">
   <div class="yu-dialog-wrapper">
     <div class="yu-dialog">
       <header>
         <span class="yu-dialog-title">标题</span>
-        <span class="yu-dialog-close"></span>
+        <span class="yu-dialog-close" @click="close"></span>
       </header>
       <main>内容</main>
       <footer>
-        <Button>取消</Button>
-        <Button theme="primary">确认</Button>
+        <Button @click="close">取消</Button>
+        <Button theme="primary" @click="close">确认</Button>
       </footer>
     </div>
   </div>
@@ -28,8 +28,13 @@ export default {
       default: false,
     }
   },
-  setup(props) {
-    console.log(props.visible)
+  setup(props, context) {
+    const close = (e) => {
+      context.emit('update:visible', false)
+    }
+    return {
+      close
+    }
   }
 }
 </script>
