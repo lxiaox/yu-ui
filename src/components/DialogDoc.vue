@@ -1,7 +1,11 @@
 <template>
 <div>
   <Button @click="toggle1">show Dialog 1</Button>
-  <Dialog v-model:visible="visible1" :overlay-closable="false" :ok="ok1" :cancel="cancel1"></Dialog>
+  <Dialog v-model:visible="visible1" :overlay-closable="false" :ok="ok1" :cancel="cancel1" title="你知道吗" okText="知道了" cancelText="不知道">
+    <div>内容1</div>
+    <div>内容2</div>
+    <div>内容3</div>
+  </Dialog>
   <Button @click="toggle2">show Dialog 2</Button>
   <Dialog v-model:visible="visible2" :closable="true"></Dialog>
 </div>

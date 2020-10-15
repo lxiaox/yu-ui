@@ -3,13 +3,15 @@
   <div class="yu-dialog-wrapper">
     <div class="yu-dialog">
       <header>
-        <span class="yu-dialog-title">标题</span>
+        <span class="yu-dialog-title">{{title}}</span>
         <span class="yu-dialog-close" @click="close" v-show="closable"></span>
       </header>
-      <main>内容</main>
+      <main>
+        <slot />
+      </main>
       <footer>
-        <Button @click="cancel">取消</Button>
-        <Button theme="primary" @click="ok">确认</Button>
+        <Button @click="cancel">{{cancelText}}</Button>
+        <Button theme="primary" @click="ok">{{okText}}</Button>
       </footer>
     </div>
   </div>
@@ -40,7 +42,20 @@ export default {
     },
     cancel: {
       type: Function
-    }
+    },
+    title: {
+      type: String,
+      default: '提示'
+    },
+    okText: {
+      type: String,
+      default: '确定'
+    },
+    cancelText: {
+      type: String,
+      default: '取消'
+    },
+
   },
   setup(props, context) {
     const close = () => {
