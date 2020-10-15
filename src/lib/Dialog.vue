@@ -4,7 +4,7 @@
     <div class="yu-dialog">
       <header>
         <span class="yu-dialog-title">标题</span>
-        <span class="yu-dialog-close" @click="close"></span>
+        <span class="yu-dialog-close" @click="close" v-show="closable"></span>
       </header>
       <main>内容</main>
       <footer>
@@ -30,6 +30,10 @@ export default {
     overlayClosable: {
       type: Boolean,
       default: false,
+    },
+    closable: {
+      type: Boolean,
+      default: true,
     }
   },
   setup(props, context) {

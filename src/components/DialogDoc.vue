@@ -1,9 +1,9 @@
 <template>
 <div>
   <Button @click="toggle1">show Dialog 1</Button>
-  <Dialog v-model:visible="visible1" overlay-closable="true"></Dialog>
+  <Dialog v-model:visible="visible1" :overlay-closable="false"></Dialog>
   <Button @click="toggle2">show Dialog 2</Button>
-  <Dialog v-model:visible="visible2"></Dialog>
+  <Dialog v-model:visible="visible2" :closable="true"></Dialog>
 </div>
 </template>
 
