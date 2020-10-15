@@ -1,25 +1,36 @@
 <template>
-<div>
-  <h1>Switch</h1>
-  <Switch v-model:value="value1" />
-  <h1>自定义颜色</h1>
-  <Switch v-model:value="value2" active-color="#5fe676" inactive-color="#ff4949" />
-  <Switch v-model:value="value3" active-color="#5fe676" inactive-color="#e6a23c" />
-  <h1>禁用状态</h1>
-  <Switch v-model:value="value4" disabled />
-  <Switch v-model:value="value5" disabled />
-  <Switch v-model:value="value6" active-color="#5fe676" inactive-color="#ff4949" disabled />
-</div>
+  <div>
+    <h1>Switch</h1>
+    <Switch v-model:value="value1" />
+    <h1>自定义颜色</h1>
+    <Switch
+      v-model:value="value2"
+      active-color="#5fe676"
+      inactive-color="#ff4949"
+    />
+    <Switch
+      v-model:value="value3"
+      active-color="#5fe676"
+      inactive-color="#e6a23c"
+    />
+    <h1>禁用状态</h1>
+    <Switch v-model:value="value4" disabled />
+    <Switch v-model:value="value5" disabled />
+    <Switch
+      v-model:value="value6"
+      active-color="#5fe676"
+      inactive-color="#ff4949"
+      disabled
+    />
+  </div>
 </template>
 
 <script lang="ts">
-import {
-  ref
-} from 'vue'
+import { ref } from 'vue'
 import Switch from '../lib/Switch.vue'
 export default {
   components: {
-    Switch
+    Switch,
   },
   setup() {
     const value1 = ref(false)
@@ -36,12 +47,12 @@ export default {
       value5,
       value6,
     }
-  }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-.yu-switch+.yu-switch {
+.yu-switch + .yu-switch {
   margin-left: 20px;
 }
 

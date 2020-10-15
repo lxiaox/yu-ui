@@ -1,21 +1,18 @@
 <template>
-<router-view />
+  <router-view />
 </template>
 
 <script lang="ts">
-import {
-  provide,
-  ref
-} from 'vue';
-import router from './router';
+import { provide, ref } from 'vue'
+import router from './router'
 export default {
-  name: "App",
+  name: 'App',
   setup() {
     const asideVisible = ref(false)
     provide('asideVisible', asideVisible)
     router.afterEach(() => {
       asideVisible.value = false
     })
-  }
-};
+  },
+}
 </script>

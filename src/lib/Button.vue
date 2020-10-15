@@ -1,14 +1,12 @@
 <template>
-<button class="yu-btn" :class="classes" :disabled="disabled">
-  <span class="yu-btn-loading" v-if="loading"></span>
-  <slot />
-</button>
+  <button class="yu-btn" :class="classes" :disabled="disabled">
+    <span class="yu-btn-loading" v-if="loading"></span>
+    <slot />
+  </button>
 </template>
 
 <script lang="ts">
-import {
-  computed
-} from 'vue'
+import { computed } from 'vue'
 export default {
   props: {
     theme: {
@@ -32,11 +30,7 @@ export default {
     },
   },
   setup(props) {
-    const {
-      theme,
-      size,
-      round,
-    } = props
+    const { theme, size, round } = props
     const classes = computed(() => {
       return {
         [`yu-btn-theme-${theme}`]: theme,
@@ -45,15 +39,15 @@ export default {
       }
     })
     return {
-      classes
+      classes,
     }
-  }
+  },
 }
 </script>
 
 <style lang="scss">
 $blue: #57a1f1;
-$blue2:#2d8cf0;
+$blue2: #2d8cf0;
 $green: #67c23a;
 $yellow: #e6a23c;
 $red: #f56c6c;
@@ -80,11 +74,10 @@ $size2: 12px; // 小、超小按钮
 
   &[disabled] {
     cursor: not-allowed;
-    opacity: .6;
+    opacity: 0.6;
   }
 
   &.yu-btn-theme-default {
-
     &:not(:disabled):hover,
     &:not(:disabled):focus {
       color: $blue;
@@ -212,13 +205,11 @@ $size2: 12px; // 小、超小按钮
 
     100% {
       transform: rotate(360deg);
-
     }
   }
 
   &.yu-btn-round {
-    border-radius: $size1*2;
+    border-radius: $size1 * 2;
   }
-
 }
 </style>

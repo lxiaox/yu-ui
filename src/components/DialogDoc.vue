@@ -1,39 +1,48 @@
 <template>
-<div>
-  <Button @click="toggle1">普通用法</Button>
-  <Button @click="toggle2">插槽示例</Button>
-  <!-- dialog1 -->
-  <Dialog v-model:visible="visible1" :overlay-closable="true" :closable="true" :ok="ok1" :cancel="cancel1" title="你知道吗" ok-text="知道了" cancel-text="不知道" :header-visible="true" :footer-visible="true">
-    <div>内容1</div>
-    <div>内容2</div>
-    <div>内容3</div>
-  </Dialog>
-  <!-- dialog2 -->
-  <Dialog v-model:visible="visible2">
-    <!-- 标题 -->
-    <template v-slot:title>
-      <strong style="color:red;">slot标题</strong>
-    </template>
-    <!-- 内容 -->
-    <strong style="color:green;">slot内容</strong>
-    <!-- footer -->
-    <template v-slot:footer>
-      <Button @click="close2">slot按钮</Button>
-    </template>
-  </Dialog>
-</div>
+  <div>
+    <Button @click="toggle1">普通用法</Button>
+    <Button @click="toggle2">插槽示例</Button>
+    <!-- dialog1 -->
+    <Dialog
+      v-model:visible="visible1"
+      :overlay-closable="true"
+      :closable="true"
+      :ok="ok1"
+      :cancel="cancel1"
+      title="你知道吗"
+      ok-text="知道了"
+      cancel-text="不知道"
+      :header-visible="true"
+      :footer-visible="true"
+    >
+      <div>内容1</div>
+      <div>内容2</div>
+      <div>内容3</div>
+    </Dialog>
+    <!-- dialog2 -->
+    <Dialog v-model:visible="visible2">
+      <!-- 标题 -->
+      <template v-slot:title>
+        <strong style="color: red">slot标题</strong>
+      </template>
+      <!-- 内容 -->
+      <strong style="color: green">slot内容</strong>
+      <!-- footer -->
+      <template v-slot:footer>
+        <Button @click="close2">slot按钮</Button>
+      </template>
+    </Dialog>
+  </div>
 </template>
 
 <script lang="ts">
-import {
-  ref
-} from 'vue'
-import Dialog from "../lib/Dialog.vue"
-import Button from "../lib/Button.vue"
+import { ref } from 'vue'
+import Dialog from '../lib/Dialog.vue'
+import Button from '../lib/Button.vue'
 export default {
   components: {
     Dialog,
-    Button
+    Button,
   },
   setup() {
     const visible1 = ref(false)
@@ -62,14 +71,14 @@ export default {
       toggle2,
       ok1,
       cancel1,
-      close2
+      close2,
     }
-  }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-.yu-btn+.yu-btn {
+.yu-btn + .yu-btn {
   margin-left: 20px;
 }
 </style>

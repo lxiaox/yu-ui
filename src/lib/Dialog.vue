@@ -1,34 +1,41 @@
 <template>
-<template v-if="visible">
-  <div class="yu-dialog-overlay" @click.self="onClickOverlay">
-    <div class="yu-dialog-wrapper">
-      <div class="yu-dialog">
-        <header v-show="headerVisible">
-          <slot name="title" />
-          <span class="yu-dialog-title" v-if="!$slots.title">{{title}}</span>
-          <span class="yu-dialog-close" @click="close" v-show="closable"></span>
-        </header>
-        <main>
-          <slot />
-        </main>
-        <footer v-show="footerVisible">
-          <slot name="footer" />
-          <div v-if="!$slots.footer">
-            <Button @click="cancel">{{cancelText}}</Button>
-            <Button theme="primary" @click="ok">{{okText}}</Button>
-          </div>
-        </footer>
+  <template v-if="visible">
+    <div class="yu-dialog-overlay" @click.self="onClickOverlay">
+      <div class="yu-dialog-wrapper">
+        <div class="yu-dialog">
+          <header v-show="headerVisible">
+            <slot name="title" />
+            <span class="yu-dialog-title" v-if="!$slots.title">{{
+              title
+            }}</span>
+            <span
+              class="yu-dialog-close"
+              @click="close"
+              v-show="closable"
+            ></span>
+          </header>
+          <main>
+            <slot />
+          </main>
+          <footer v-show="footerVisible">
+            <slot name="footer" />
+            <div v-if="!$slots.footer">
+              <Button @click="cancel">{{ cancelText }}</Button>
+              <Button theme="primary" @click="ok">{{ okText }}</Button>
+            </div>
+          </footer>
+        </div>
       </div>
     </div>
-  </div>
+  </template>
 </template>
 </template>
 
 <script lang="ts">
-import Button from "./Button.vue"
+import Button from './Button.vue'
 export default {
   components: {
-    Button
+    Button,
   },
   props: {
     visible: {
@@ -44,30 +51,30 @@ export default {
       default: true,
     },
     ok: {
-      type: Function
+      type: Function,
     },
     cancel: {
-      type: Function
+      type: Function,
     },
     title: {
       type: String,
-      default: '提示'
+      default: '提示',
     },
     okText: {
       type: String,
-      default: '确定'
+      default: '确定',
     },
     cancelText: {
       type: String,
-      default: '取消'
+      default: '取消',
     },
     headerVisible: {
       type: Boolean,
-      default: true
+      default: true,
     },
     footerVisible: {
       type: Boolean,
-      default: true
+      default: true,
     },
   },
   setup(props, context) {
@@ -94,15 +101,15 @@ export default {
       close,
       onClickOverlay,
       ok,
-      cancel
+      cancel,
     }
-  }
+  },
 }
 </script>
 
 <style lang="scss">
-$border-grey:#ddd;
-$blue:#2d8cf0;
+$border-grey: #ddd;
+$blue: #2d8cf0;
 
 .yu-dialog-overlay {
   z-index: 100;
@@ -125,7 +132,7 @@ $blue:#2d8cf0;
       width: 300px;
       box-shadow: 0 0 10px fade_out(black, 0.5);
 
-      &>header {
+      & > header {
         padding: 14px 16px;
         border-bottom: 1px solid $border-grey;
         display: flex;
@@ -170,11 +177,11 @@ $blue:#2d8cf0;
         }
       }
 
-      &>main {
+      & > main {
         padding: 14px 16px;
       }
 
-      &>footer {
+      & > footer {
         padding: 14px 16px;
         border-top: 1px solid $border-grey;
         text-align: right;
@@ -183,7 +190,6 @@ $blue:#2d8cf0;
           margin-left: 20px;
         }
       }
-
     }
   }
 }

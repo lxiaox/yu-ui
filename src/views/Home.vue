@@ -1,24 +1,24 @@
 <template>
-<div>
-  <Topnav />
-  <div class="content">
-    <h1>小鱼UI</h1>
-    <h2>基于 VUE3 的 UI 框架</h2>
-    <p class="actions">
-      <a href="https://github.com" target="_blank">GitHub</a>
-      <router-link to="/doc">开始</router-link>
-    </p>
+  <div>
+    <Topnav />
+    <div class="content">
+      <h1>小鱼UI</h1>
+      <h2>基于 VUE3 的 UI 框架</h2>
+      <p class="actions">
+        <a href="https://github.com" target="_blank">GitHub</a>
+        <router-link to="/doc">开始</router-link>
+      </p>
+    </div>
   </div>
-</div>
 </template>
 
 <script lang="ts">
-import Topnav from "../components/Topnav.vue";
+import Topnav from '../components/Topnav.vue'
 export default {
   components: {
     Topnav,
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -30,7 +30,7 @@ export default {
   flex-direction: column;
   background: #2e2e2e22;
 
-  >.actions {
+  > .actions {
     padding: 8px 0;
 
     a {

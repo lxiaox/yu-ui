@@ -1,36 +1,32 @@
 <template>
-<div class="topnav-wrapper">
-  <div class="topnav">
-    <span class="toggle-aside-btn" @click="toggleAsideVisible"></span>
-    <router-link class="logo" to="/">
-    </router-link>
-    <ul class="menu">
-      <li>
-        <router-link to="/"> 首页 </router-link>
-      </li>
-      <li>
-        <router-link to="/doc"> 文档 </router-link>
-      </li>
-    </ul>
+  <div class="topnav-wrapper">
+    <div class="topnav">
+      <span class="toggle-aside-btn" @click="toggleAsideVisible"></span>
+      <router-link class="logo" to="/"> </router-link>
+      <ul class="menu">
+        <li>
+          <router-link to="/"> 首页 </router-link>
+        </li>
+        <li>
+          <router-link to="/doc"> 文档 </router-link>
+        </li>
+      </ul>
+    </div>
   </div>
-</div>
 </template>
 
 <script lang="ts">
-import {
-  inject,
-  Ref
-} from 'vue'
+import { inject, Ref } from 'vue'
 export default {
   setup() {
-    const asideVisible = inject < Ref < Boolean >> ('asideVisible')
+    const asideVisible = inject<Ref<Boolean>>('asideVisible')
     const toggleAsideVisible = () => {
       asideVisible.value = !asideVisible.value
     }
     return {
-      toggleAsideVisible
+      toggleAsideVisible,
     }
-  }
+  },
 }
 </script>
 
@@ -54,7 +50,7 @@ $h: 30px;
   color: white;
   position: relative;
 
-  >.logo {
+  > .logo {
     margin-right: auto;
     vertical-align: middle;
     cursor: pointer;
@@ -64,16 +60,15 @@ $h: 30px;
     background-size: $h;
   }
 
-  >.menu {
-
+  > .menu {
     display: flex;
     flex-wrap: nowrap;
 
-    >li {
+    > li {
       margin-right: 16px;
       line-height: $h;
 
-      >a:hover {
+      > a:hover {
         text-decoration: underline white;
       }
     }
