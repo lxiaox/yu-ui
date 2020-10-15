@@ -8,8 +8,8 @@
       </header>
       <main>内容</main>
       <footer>
-        <Button @click="close">取消</Button>
-        <Button theme="primary" @click="close">确认</Button>
+        <Button @click="cancel">取消</Button>
+        <Button theme="primary" @click="ok">确认</Button>
       </footer>
     </div>
   </div>
@@ -34,6 +34,12 @@ export default {
     closable: {
       type: Boolean,
       default: true,
+    },
+    ok: {
+      type: Function
+    },
+    cancel: {
+      type: Function
     }
   },
   setup(props, context) {
@@ -45,9 +51,22 @@ export default {
         close()
       }
     }
+    const ok = () => {
+      // 返回false可阻止关闭
+      if (props.ok?.() !== false) {
+        close()
+      }
+    }
+    const cancel = () => {
+      if (props.cancel?.() !== false) {
+        close()
+      }
+    }
     return {
       close,
-      onClickOverlay
+      onClickOverlay,
+      ok,
+      cancel
     }
   }
 }

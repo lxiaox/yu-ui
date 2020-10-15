@@ -1,7 +1,7 @@
 <template>
 <div>
   <Button @click="toggle1">show Dialog 1</Button>
-  <Dialog v-model:visible="visible1" :overlay-closable="false"></Dialog>
+  <Dialog v-model:visible="visible1" :overlay-closable="false" :ok="ok1" :cancel="cancel1"></Dialog>
   <Button @click="toggle2">show Dialog 2</Button>
   <Dialog v-model:visible="visible2" :closable="true"></Dialog>
 </div>
@@ -27,11 +27,21 @@ export default {
     const toggle2 = () => {
       visible2.value = true
     }
+    const ok1 = () => {
+      console.log('ok1')
+      // return false
+    }
+    const cancel1 = () => {
+      console.log('cancel1')
+      return false
+    }
     return {
       visible1,
       visible2,
       toggle1,
       toggle2,
+      ok1,
+      cancel1
     }
   }
 }
