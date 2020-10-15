@@ -2,14 +2,14 @@
 <div class="yu-dialog-overlay" @click.self="onClickOverlay" v-if="visible">
   <div class="yu-dialog-wrapper">
     <div class="yu-dialog">
-      <header>
+      <header v-show="headerVisible">
         <span class="yu-dialog-title">{{title}}</span>
         <span class="yu-dialog-close" @click="close" v-show="closable"></span>
       </header>
       <main>
         <slot />
       </main>
-      <footer>
+      <footer v-show="footerVisible">
         <Button @click="cancel">{{cancelText}}</Button>
         <Button theme="primary" @click="ok">{{okText}}</Button>
       </footer>
@@ -55,7 +55,14 @@ export default {
       type: String,
       default: '取消'
     },
-
+    headerVisible: {
+      type: Boolean,
+      default: true
+    },
+    footerVisible: {
+      type: Boolean,
+      default: true
+    },
   },
   setup(props, context) {
     const close = () => {
