@@ -1,7 +1,9 @@
 <template>
 <div>
-  <Button @click="toggle">show Dialog</Button>
-  <Dialog v-model:visible="visible"></Dialog>
+  <Button @click="toggle1">show Dialog 1</Button>
+  <Dialog v-model:visible="visible1" overlay-closable="true"></Dialog>
+  <Button @click="toggle2">show Dialog 2</Button>
+  <Dialog v-model:visible="visible2"></Dialog>
 </div>
 </template>
 
@@ -17,13 +19,19 @@ export default {
     Button
   },
   setup() {
-    const visible = ref(false)
-    const toggle = () => {
-      visible.value = true
+    const visible1 = ref(false)
+    const visible2 = ref(false)
+    const toggle1 = () => {
+      visible1.value = true
+    }
+    const toggle2 = () => {
+      visible2.value = true
     }
     return {
-      visible,
-      toggle
+      visible1,
+      visible2,
+      toggle1,
+      toggle2,
     }
   }
 }

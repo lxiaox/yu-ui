@@ -1,5 +1,5 @@
 <template>
-<div class="yu-dialog-overlay" @click.self="close" v-if="visible">
+<div class="yu-dialog-overlay" @click.self="onClickOverlay" v-if="visible">
   <div class="yu-dialog-wrapper">
     <div class="yu-dialog">
       <header>
@@ -26,14 +26,24 @@ export default {
     visible: {
       type: Boolean,
       default: false,
+    },
+    overlayClosable: {
+      type: Boolean,
+      default: false,
     }
   },
   setup(props, context) {
-    const close = (e) => {
+    const close = () => {
       context.emit('update:visible', false)
     }
+    const onClickOverlay = () => {
+      if (props.overlayClosable) {
+        close()
+      }
+    }
     return {
-      close
+      close,
+      onClickOverlay
     }
   }
 }
