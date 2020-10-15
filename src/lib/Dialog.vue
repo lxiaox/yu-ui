@@ -1,21 +1,27 @@
 <template>
-<div class="yu-dialog-overlay" @click.self="onClickOverlay" v-if="visible">
-  <div class="yu-dialog-wrapper">
-    <div class="yu-dialog">
-      <header v-show="headerVisible">
-        <span class="yu-dialog-title">{{title}}</span>
-        <span class="yu-dialog-close" @click="close" v-show="closable"></span>
-      </header>
-      <main>
-        <slot />
-      </main>
-      <footer v-show="footerVisible">
-        <Button @click="cancel">{{cancelText}}</Button>
-        <Button theme="primary" @click="ok">{{okText}}</Button>
-      </footer>
+<template v-if="visible">
+  <div class="yu-dialog-overlay" @click.self="onClickOverlay">
+    <div class="yu-dialog-wrapper">
+      <div class="yu-dialog">
+        <header v-show="headerVisible">
+          <slot name="title" />
+          <span class="yu-dialog-title" v-if="!$slots.title">{{title}}</span>
+          <span class="yu-dialog-close" @click="close" v-show="closable"></span>
+        </header>
+        <main>
+          <slot />
+        </main>
+        <footer v-show="footerVisible">
+          <slot name="footer" />
+          <div v-if="!$slots.footer">
+            <Button @click="cancel">{{cancelText}}</Button>
+            <Button theme="primary" @click="ok">{{okText}}</Button>
+          </div>
+        </footer>
+      </div>
     </div>
   </div>
-</div>
+</template>
 </template>
 
 <script lang="ts">
