@@ -7,7 +7,7 @@
             <header v-show="headerVisible">
               <slot name="title" />
               <span class="yu-dialog-title" v-if="!$slots.title">{{
-                title
+                titleText
               }}</span>
               <span
                 class="yu-dialog-close"
@@ -30,7 +30,6 @@
       </div>
     </Teleport>
   </template>
-</template>
 </template>
 
 <script lang="ts">
@@ -58,7 +57,7 @@ export default {
     cancel: {
       type: Function,
     },
-    title: {
+    titleText: {
       type: String,
       default: '提示',
     },
