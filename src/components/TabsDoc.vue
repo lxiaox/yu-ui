@@ -2,10 +2,10 @@
   <h1>tabs示例</h1>
   <Tabs>
     <Tab title="标题1">
-      <div>1</div>
+      <div>内容1</div>
     </Tab>
     <Tab title="标题2">
-      <div>2</div>
+      <div>内容2</div>
     </Tab>
   </Tabs>
 </template>
