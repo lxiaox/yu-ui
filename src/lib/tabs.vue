@@ -1,9 +1,22 @@
 <template>
-<div>tabs</div>
+  <component :is="defaults[0]" />
+  <component :is="defaults[1]" />
 </template>
 
 <script lang="ts">
-export default {}
+import Tab from './tab.vue'
+export default {
+  setup(props, context) {
+    const defaults = context.slots.default()
+    defaults.forEach((tag) => {
+      if (tag.type !== Tab) {
+        throw Error('Tabs的子标签必须是Tab')
+      }
+    })
+
+    return { defaults }
+  },
+}
 </script>
 
 <style lang="scss">
