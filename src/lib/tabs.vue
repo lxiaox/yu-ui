@@ -1,6 +1,5 @@
 <template>
-  <component :is="defaults[0]" />
-  <component :is="defaults[1]" />
+  <component v-for="c in defaults" :is="c" />
 </template>
 
 <script lang="ts">
