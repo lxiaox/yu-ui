@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, onUpdated, ref } from 'vue'
 import Tab from './tab.vue'
 export default {
   props: {
@@ -42,7 +42,8 @@ export default {
     const navItems = ref<HTMLDivElement[]>([])
     const indicator = ref<HTMLDivElement>(null)
     const navContainer = ref<HTMLDivElement>(null)
-    onMounted(() => {
+
+    const f = () => {
       const divs = navItems.value
       const result = divs.filter((div) => {
         return div.classList.contains('selected')
@@ -55,7 +56,9 @@ export default {
       const { left: left1 } = navContainer.value.getBoundingClientRect()
       const { left: left2 } = result.getBoundingClientRect()
       indicator.value.style.left = left2 - left1 + 'px'
-    })
+    }
+    onMounted(f)
+    onUpdated(f)
     const defaults = context.slots.default()
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {

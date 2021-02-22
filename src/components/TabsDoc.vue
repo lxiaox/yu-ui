@@ -1,10 +1,10 @@
 <template>
   <h1>tabs示例</h1>
   <Tabs v-model:selected="currentTabTitle">
-    <Tab title="标题1">
+    <Tab title="香蕉">
       <div>内容1</div>
     </Tab>
-    <Tab title="标题2">
+    <Tab title="火龙果">
       <div>内容2</div>
     </Tab>
   </Tabs>
@@ -20,7 +20,7 @@ export default {
     Tab,
   },
   setup() {
-    const currentTabTitle = ref('标题1')
+    const currentTabTitle = ref('火龙果')
     return { currentTabTitle }
   },
 }
