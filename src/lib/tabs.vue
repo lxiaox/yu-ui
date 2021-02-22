@@ -7,10 +7,15 @@
         v-for="(t, index) in titles"
         :key="index"
         @click="select(t)"
+        :ref="
+          (el) => {
+            if (el) navItems[index] = el
+          }
+        "
       >
         {{ t }}
       </div>
-      <div class="yu-tabs-nav-indicator"></div>
+      <div class="yu-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="yu-tabs-content">
       <component
@@ -25,6 +30,7 @@
 </template>
 
 <script lang="ts">
+import { computed, onMounted, ref } from 'vue'
 import Tab from './tab.vue'
 export default {
   props: {
@@ -33,8 +39,20 @@ export default {
     },
   },
   setup(props, context) {
+    const navItems = ref<HTMLDivElement[]>([])
+    const indicator = ref<HTMLDivElement>(null)
+    onMounted(() => {
+      const divs = navItems.value
+      const result = divs.filter((div) => {
+        return div.classList.contains('selected')
+      })[0]
+      // 获取标题宽度
+      const { width } = result.getBoundingClientRect()
+      console.log(width)
+      //赋值
+      indicator.value.style.width = width + 'px'
+    })
     const defaults = context.slots.default()
-    console.log(defaults)
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
         throw Error('Tabs的子标签必须是Tab')
@@ -46,7 +64,7 @@ export default {
     const select = (title: string) => {
       context.emit('update:selected', title)
     }
-    return { defaults, titles, select }
+    return { defaults, titles, select, navItems, indicator }
   },
 }
 </script>
