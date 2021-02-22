@@ -30,7 +30,7 @@
 </template>
 
 <script lang="ts">
-import { computed, onMounted, onUpdated, ref } from 'vue'
+import { computed, onMounted, onUpdated, ref, watch, watchEffect } from 'vue'
 import Tab from './tab.vue'
 export default {
   props: {
@@ -43,18 +43,18 @@ export default {
     const indicator = ref<HTMLDivElement>(null)
     const navContainer = ref<HTMLDivElement>(null)
 
-    const f = () => {
-      // 获取标题宽度
-      const { width } = selectedItem.value.getBoundingClientRect()
-      //赋值
-      indicator.value.style.width = width + 'px'
-      //下划线left宽度
-      const { left: left1 } = navContainer.value.getBoundingClientRect()
-      const { left: left2 } = selectedItem.value.getBoundingClientRect()
-      indicator.value.style.left = left2 - left1 + 'px'
-    }
-    onMounted(f)
-    onUpdated(f)
+    onMounted(() => {
+      watchEffect(() => {
+        // 获取标题宽度
+        const { width } = selectedItem.value.getBoundingClientRect()
+        //赋值
+        indicator.value.style.width = width + 'px'
+        //下划线left宽度
+        const { left: left1 } = navContainer.value.getBoundingClientRect()
+        const { left: left2 } = selectedItem.value.getBoundingClientRect()
+        indicator.value.style.left = left2 - left1 + 'px'
+      })
+    })
     const defaults = context.slots.default()
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
