@@ -1,6 +1,6 @@
 <template>
   <div class="yu-tabs">
-    <div class="yu-tabs-nav">
+    <div class="yu-tabs-nav" ref="navContainer">
       <div
         class="yu-tabs-nav-item"
         :class="{ selected: t === selected }"
@@ -41,6 +41,7 @@ export default {
   setup(props, context) {
     const navItems = ref<HTMLDivElement[]>([])
     const indicator = ref<HTMLDivElement>(null)
+    const navContainer = ref<HTMLDivElement>(null)
     onMounted(() => {
       const divs = navItems.value
       const result = divs.filter((div) => {
@@ -48,9 +49,12 @@ export default {
       })[0]
       // 获取标题宽度
       const { width } = result.getBoundingClientRect()
-      console.log(width)
       //赋值
       indicator.value.style.width = width + 'px'
+      //下划线left宽度
+      const { left: left1 } = navContainer.value.getBoundingClientRect()
+      const { left: left2 } = result.getBoundingClientRect()
+      indicator.value.style.left = left2 - left1 + 'px'
     })
     const defaults = context.slots.default()
     defaults.forEach((tag) => {
@@ -64,7 +68,7 @@ export default {
     const select = (title: string) => {
       context.emit('update:selected', title)
     }
-    return { defaults, titles, select, navItems, indicator }
+    return { defaults, titles, select, navItems, indicator, navContainer }
   },
 }
 </script>
