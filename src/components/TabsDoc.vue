@@ -1,6 +1,6 @@
 <template>
   <h1>tabs示例</h1>
-  <Tabs>
+  <Tabs v-model:selected="currentTabTitle">
     <Tab title="标题1">
       <div>内容1</div>
     </Tab>
@@ -11,12 +11,17 @@
 </template>
 
 <script>
+import { ref } from 'vue'
 import Tabs from '../lib/tabs.vue'
 import Tab from '../lib/tab.vue'
 export default {
   components: {
     Tabs,
     Tab,
+  },
+  setup() {
+    const currentTabTitle = ref('标题1')
+    return { currentTabTitle }
   },
 }
 </script>
