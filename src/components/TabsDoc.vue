@@ -12,8 +12,8 @@
 
 <script>
 import { ref } from 'vue'
-import Tabs from '../lib/tabs.vue'
-import Tab from '../lib/tab.vue'
+import Tabs from '../lib/Tabs.vue'
+import Tab from '../lib/Tab.vue'
 export default {
   components: {
     Tabs,
