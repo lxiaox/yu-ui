@@ -25,6 +25,7 @@
         :is="c"
         :key="index"
       />
+      <!-- <component :is="current" :key="current.props.title" /> -->
     </div>
   </div>
 </template>
@@ -67,7 +68,18 @@ export default {
     const select = (title: string) => {
       context.emit('update:selected', title)
     }
-    return { defaults, titles, select, selectedItem, indicator, navContainer }
+    const current = computed(() => {
+      return defaults.find((tag) => tag.props.title === props.selected)
+    })
+    return {
+      defaults,
+      titles,
+      select,
+      selectedItem,
+      indicator,
+      navContainer,
+      current,
+    }
   },
 }
 </script>
