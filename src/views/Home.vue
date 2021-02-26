@@ -28,24 +28,21 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #2e2e2e22;
+  color: #0a8e81cc;
 
   > .actions {
-    padding: 8px 0;
+    padding: 32px 0;
 
     a {
-      margin: 0 8px;
+      margin: 0 16px;
       background: #fff;
       display: inline-block;
-      $h: 28px;
-      height: $h;
-      line-height: $h;
-      border-radius: $h/2;
-      padding: 0 8px;
-      border: 1px solid transparent;
+      padding: 8px 16px;
+      border: 1px solid #11bbaacc;
+      transition: all 250ms;
 
       &:hover {
-        border-color: #11bbaacc;
+        border-radius: 6px;
       }
     }
   }
