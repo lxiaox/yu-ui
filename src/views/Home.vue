@@ -9,6 +9,29 @@
         <router-link to="/doc">开始</router-link>
       </p>
     </div>
+    <ui class="feature-container">
+      <li class="feature">
+        <svg class="icon">
+          <use xlink:href="#icon-vue3"></use>
+        </svg>
+        <h3>基于VUE3</h3>
+        <p>使用了vue3 Composition API</p>
+      </li>
+      <li class="feature">
+        <svg class="icon">
+          <use xlink:href="#icon-ts"></use>
+        </svg>
+        <h3>基于TypeScript</h3>
+        <p>源代码采用TypeScript编写</p>
+      </li>
+      <li class="feature">
+        <svg class="icon">
+          <use xlink:href="#icon-read"></use>
+        </svg>
+        <h3>代码易读</h3>
+        <p>每个组件的源代码都极其简洁</p>
+      </li>
+    </ui>
   </div>
 </template>
 
@@ -23,7 +46,7 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-  padding: 100px 0;
+  padding: 100px 0 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,5 +69,48 @@ export default {
       }
     }
   }
+}
+.feature-container {
+  margin: 64px auto;
+  width: 400px;
+  @media (min-width: 800px) {
+    width: 800px;
+  }
+  @media (min-width: 1200px) {
+    width: 1200px;
+  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-content: space-between;
+  .feature {
+    width: 400px;
+    margin: 16px 0;
+    display: grid;
+    grid-template-areas: 'icon title' 'icon text';
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 150px auto;
+
+    svg {
+      width: 60px;
+      height: 60px;
+      grid-area: icon;
+      margin-left: 60px;
+    }
+    h3 {
+      grid-area: title;
+      font-size: 24px;
+    }
+    p {
+      grid-area: text;
+    }
+  }
+}
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
 </style>
