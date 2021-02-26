@@ -1,7 +1,11 @@
 <template>
   <div class="topnav-wrapper">
     <div class="topnav">
-      <span class="toggle-aside-btn" @click="toggleAsideVisible"></span>
+      <span
+        v-if="isDoc"
+        class="toggle-aside-btn"
+        @click="toggleAsideVisible"
+      ></span>
       <router-link class="logo" to="/"> </router-link>
       <ul class="menu">
         <li>
@@ -18,6 +22,12 @@
 <script lang="ts">
 import { inject, Ref } from 'vue'
 export default {
+  props: {
+    isDoc: {
+      type: Boolean,
+      default: false,
+    },
+  },
   setup() {
     const asideVisible = inject<Ref<Boolean>>('asideVisible')
     const toggleAsideVisible = () => {

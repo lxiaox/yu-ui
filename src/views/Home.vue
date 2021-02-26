@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Topnav />
+    <Topnav :isDoc="false" />
     <div class="content">
       <h1>小鱼UI</h1>
       <h2>基于 VUE3 的 UI 框架</h2>

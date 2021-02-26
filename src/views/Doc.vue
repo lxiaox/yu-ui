@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Topnav />
+    <Topnav :isDoc="true" />
     <div class="content">
       <aside :class="{ open: asideVisible }">
         <h2>组件列表</h2>
