@@ -74,7 +74,7 @@ aside {
     > li {
       padding: 8px 0;
 
-      &:hover {
+      a.router-link-active {
         color: #11a999;
       }
     }
