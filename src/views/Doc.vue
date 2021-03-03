@@ -3,7 +3,6 @@
     <Topnav :isDoc="true" />
     <div class="content">
       <aside :class="{ open: asideVisible }">
-        <h2>组件列表</h2>
         <ol>
           <li>
             <router-link to="/doc/intro">介绍</router-link>
@@ -14,6 +13,9 @@
           <li>
             <router-link to="/doc/get-started">开始</router-link>
           </li>
+        </ol>
+        <h2>组件列表</h2>
+        <ol>
           <li>
             <router-link to="/doc/switch">Switch 组件</router-link>
           </li>
@@ -65,6 +67,7 @@ aside {
   padding-top: 70px;
   transition: all 0.3s;
   z-index: 9;
+  // box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
   > h2 {
     margin-bottom: 8px;
@@ -89,14 +92,13 @@ main {
 
 @media (min-width: 551px) {
   main {
-    padding-left: 170px;
+    padding-left: 200px;
   }
 
   aside {
     transform: translate(0, 0);
     opacity: 1;
-    box-shadow: none;
-    background-color: #fff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
   }
 }
 
