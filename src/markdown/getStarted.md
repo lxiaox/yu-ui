@@ -5,7 +5,7 @@
 引入YU UI
 
 ```
-import {Button, Tabs, Switch, Dialog} from "king-ui"
+import {Button, Tabs, Switch, Dialog} from "yu-ui"
 ```
 
 代码示例：
@@ -15,7 +15,7 @@ import {Button, Tabs, Switch, Dialog} from "king-ui"
   <div><Button>按钮</Button></div>
 </template>
 <script>
-  import {Button, Tabs, Switch, Dialog} from "king-ui"
+  import {Button, Tabs, Switch, Dialog} from "yu-ui"
   export default {
     components: {Button}
   }
