@@ -1,5 +1,5 @@
 <template>
-  <article>
+  <article class="markdown-body">
     <h1>使用</h1>
 
     <p>使用之前，请先<a href="#/doc/install">安装</a>。</p>
