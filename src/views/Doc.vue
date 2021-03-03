@@ -70,7 +70,7 @@ aside {
   // box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 
   > h2 {
-    margin-bottom: 8px;
+    margin: 8px 0;
   }
 
   > ol {
