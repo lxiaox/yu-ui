@@ -1,7 +1,6 @@
 import { createWebHashHistory, createRouter } from "vue-router";
 import Home from "./views/Home.vue";
 import Doc from "./views/Doc.vue";
-import DocInfo from "./components/DocInfo.vue";
 import Intro from "./components/Intro.vue";
 import Install from "./components/Install.vue";
 import GetStarted from "./components/GetStarted.vue";
@@ -18,7 +17,7 @@ const router = createRouter({
       path: "/doc",
       component: Doc,
       children: [
-        { path: "", component: DocInfo },
+        { path: "", redirect: "/doc/intro" },
         { path: "intro", component: Intro },
         { path: "install", component: Install },
         { path: "get-started", component: GetStarted },
