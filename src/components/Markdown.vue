@@ -21,3 +21,10 @@ export default {
   },
 }
 </script>
+<style lang="scss">
+.markdown-body {
+  p > a {
+    color: #11a999;
+  }
+}
+</style>

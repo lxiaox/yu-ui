@@ -56,6 +56,7 @@ $h: 30px;
   padding: 12px;
   color: white;
   position: relative;
+  box-shadow: 0 0 10px #11bbaacc;
 
   > .logo {
     margin-right: auto;
