@@ -5,12 +5,9 @@
       <component :is="component" />
     </div>
     <div class="demo-options">
-      <Button v-show="!codeVisible" @click="codeVisible = true"
-        >显示代码</Button
-      >
-      <Button v-show="codeVisible" @click="codeVisible = false"
-        >隐藏代码</Button
-      >
+      <Button @click="codeVisible = !codeVisible">
+        {{ codeVisible ? '隐藏' : '显示' }}代码
+      </Button>
     </div>
     <div class="demo-code" v-show="codeVisible">
       <pre
