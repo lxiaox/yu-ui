@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Demo title="基本用法" :component="Switch"></Demo>
     <h1>Switch</h1>
     <Switch v-model:value="value1" />
     <h1>自定义颜色</h1>
@@ -46,6 +47,7 @@ export default {
       value4,
       value5,
       value6,
+      Switch,
     }
   },
 }

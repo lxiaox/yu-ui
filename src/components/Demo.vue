@@ -1,0 +1,54 @@
+<template>
+  <div class="demo">
+    <h2>{{ title }}</h2>
+    <div class="demo-component">
+      <component :is="component" />
+    </div>
+    <div class="demo-options">
+      <Button v-if="!codeVisible" @click="codeVisible = true">显示代码</Button>
+      <Button v-if="codeVisible" @click="codeVisible = false">隐藏代码</Button>
+    </div>
+    <div class="demo-code" v-if="codeVisible">
+      <pre>xxxxxxxxxx</pre>
+    </div>
+  </div>
+</template>
+<script lang="ts">
+import Vue, { ref } from 'vue'
+import Button from '../lib/Button.vue'
+export default {
+  props: {
+    title: String,
+    component: Object,
+  },
+  components: {
+    Button,
+  },
+  setup() {
+    const codeVisible = ref(false)
+    return { codeVisible }
+  },
+}
+</script>
+<style lang="scss">
+$border-color: #a89e9e;
+.demo {
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  h2 {
+    margin: 20px;
+  }
+  &-component {
+    border-top: 1px dashed $border-color;
+    padding: 20px;
+  }
+  &-options {
+    border-top: 1px dashed $border-color;
+    padding: 20px;
+  }
+  &-code {
+    border-top: 1px dashed $border-color;
+    padding: 20px;
+  }
+}
+</style>
