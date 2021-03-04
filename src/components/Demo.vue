@@ -13,13 +13,19 @@
       >
     </div>
     <div class="demo-code" v-show="codeVisible">
-      <pre>{{ code }}</pre>
+      <pre
+        class="language-html"
+        v-html="Prism.highlight(code, Prism.languages.html, 'html')"
+      />
     </div>
   </div>
 </template>
 <script lang="ts">
 import Vue, { ref } from 'vue'
 import Button from '../lib/Button.vue'
+import 'prismjs'
+import 'prismjs/themes/prism.css'
+const Prism = (window as any).Prism
 export default {
   props: {
     title: String,
@@ -34,7 +40,7 @@ export default {
     const code = ref(null)
     title.value = props.component.__sourceCodeTitle
     code.value = props.component.__sourceCode
-    return { codeVisible, title, code }
+    return { codeVisible, title, code, Prism }
   },
 }
 </script>
