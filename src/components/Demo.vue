@@ -25,7 +25,6 @@ import 'prismjs/themes/prism.css'
 const Prism = (window as any).Prism
 export default {
   props: {
-    title: String,
     component: Object,
   },
   components: {
@@ -46,6 +45,9 @@ $border-color: #a89e9e;
 .demo {
   border: 1px solid $border-color;
   border-radius: 3px;
+  & + & {
+    margin-top: 20px;
+  }
   h2 {
     padding: 8px 16px;
     font-size: 20px;

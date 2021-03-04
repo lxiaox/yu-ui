@@ -1,66 +1,26 @@
 <template>
-  <div>
-    <Demo title="基本用法" :component="Switch1"></Demo>
-
-    <h1>自定义颜色</h1>
-    <Switch
-      v-model:value="value2"
-      active-color="#5fe676"
-      inactive-color="#ff4949"
-    />
-    <Switch
-      v-model:value="value3"
-      active-color="#5fe676"
-      inactive-color="#e6a23c"
-    />
-    <h1>禁用状态</h1>
-    <Switch v-model:value="value4" disabled />
-    <Switch v-model:value="value5" disabled />
-    <Switch
-      v-model:value="value6"
-      active-color="#5fe676"
-      inactive-color="#ff4949"
-      disabled
-    />
+  <div class="switch-doc">
+    <Demo :component="Switch1"></Demo>
+    <Demo :component="Switch2"></Demo>
+    <Demo :component="Switch3"></Demo>
   </div>
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
-import Switch from '../lib/Switch.vue'
 import Switch1 from './switchDemos/Switch1.demo.vue'
+import Switch2 from './switchDemos/Switch2.demo.vue'
+import Switch3 from './switchDemos/Switch3.demo.vue'
 export default {
-  components: {
-    Switch,
-  },
   setup() {
-    const value1 = ref(false)
-    const value2 = ref(false)
-    const value3 = ref(true)
-    const value4 = ref(true)
-    const value5 = ref(false)
-    const value6 = ref(false)
-    return {
-      value1,
-      value2,
-      value3,
-      value4,
-      value5,
-      value6,
-      Switch,
-      Switch1,
-    }
+    return { Switch1, Switch2, Switch3 }
   },
 }
 </script>
-
-<style lang="scss" scoped>
-.yu-switch + .yu-switch {
-  margin-left: 20px;
-}
-
-h1 {
-  margin-top: 20px;
-  margin-bottom: 20px;
+<style lang="scss">
+.switch-doc {
+  .yu-switch + .yu-switch {
+    margin-left: 12px;
+  }
 }
 </style>
+

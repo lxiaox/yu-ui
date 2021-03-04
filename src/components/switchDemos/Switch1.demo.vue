@@ -1,6 +1,6 @@
 <demo>基本用法</demo>
 <template>
-  <Switch v-model:value="value" />
+  <Switch v-model:value="value1" />
 </template>
 
 <script lang="ts">
@@ -11,11 +11,10 @@ export default {
     Switch,
   },
   setup() {
-    const value = ref(false)
+    const value1 = ref(false)
     return {
-      value,
+      value1,
     }
   },
 }
 </script>
-
