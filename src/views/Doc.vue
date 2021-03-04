@@ -55,63 +55,64 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-aside {
-  display: block;
-  background: white;
-  width: 150px;
-  height: 100vh;
-  padding: 16px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 70px;
-  transition: all 0.3s;
-  z-index: 9;
-  // box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+$w: 501px;
+.content {
+  aside {
+    position: fixed;
+    width: 150px;
+    height: 100vh;
+    padding: 16px;
+    top: 0;
+    left: 0;
+    padding-top: 70px;
+    transition: all 250ms;
+    z-index: 9;
+    background: white;
 
-  > h2 {
-    margin: 8px 0;
-  }
-
-  > ol {
-    > li {
+    > h2 {
       padding: 8px 0;
+    }
 
-      a.router-link-active {
-        color: #11a999;
+    > ol {
+      > li {
+        padding: 8px 0;
+
+        a.router-link-active {
+          color: #11a999;
+        }
       }
     }
   }
-}
 
-main {
-  margin-top: 54px;
-  padding: 20px;
-  overflow: auto;
-}
-
-@media (min-width: 551px) {
   main {
-    padding-left: 200px;
+    margin-top: 54px;
+    padding: 20px;
+    overflow: auto;
   }
+  @media (max-width: $w) {
+    //窄屏
+    aside {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: translate(-160px, 0);
 
-  aside {
-    transform: translate(0, 0);
-    opacity: 1;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+      &.open {
+        opacity: 1; //淡入淡出
+        transform: translate(0, 0); //往右移入效果
+      }
+    }
+    main {
+      padding-left: 20px;
+    }
   }
-}
+  @media (min-width: $w) {
+    //宽屏
+    padding-left: 152px;
 
-@media (max-width: 550px) {
-  aside {
-    background: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transform: translate(-160px, 0);
-
-    &.open {
-      opacity: 1;
+    aside {
       transform: translate(0, 0);
+      opacity: 1;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     }
   }
 }

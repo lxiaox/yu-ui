@@ -39,6 +39,7 @@ export default {
 
 <style lang="scss">
 $h: 30px;
+$w: 501px;
 
 .topnav-wrapper {
   background: #fff;
@@ -93,7 +94,7 @@ $h: 30px;
     cursor: pointer;
   }
 
-  @media (max-width: 550px) {
+  @media (max-width: $w) {
     .toggle-aside-btn {
       display: inline-block;
     }
