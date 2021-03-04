@@ -1,8 +1,7 @@
 <template>
   <div>
-    <Demo title="基本用法" :component="Switch"></Demo>
-    <h1>Switch</h1>
-    <Switch v-model:value="value1" />
+    <Demo title="基本用法" :component="Switch1"></Demo>
+
     <h1>自定义颜色</h1>
     <Switch
       v-model:value="value2"
@@ -29,6 +28,7 @@
 <script lang="ts">
 import { ref } from 'vue'
 import Switch from '../lib/Switch.vue'
+import Switch1 from './switchDemos/Switch1.demo.vue'
 export default {
   components: {
     Switch,
@@ -48,6 +48,7 @@ export default {
       value5,
       value6,
       Switch,
+      Switch1,
     }
   },
 }
