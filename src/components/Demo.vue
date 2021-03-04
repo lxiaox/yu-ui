@@ -5,11 +5,15 @@
       <component :is="component" />
     </div>
     <div class="demo-options">
-      <Button v-if="!codeVisible" @click="codeVisible = true">显示代码</Button>
-      <Button v-if="codeVisible" @click="codeVisible = false">隐藏代码</Button>
+      <Button v-show="!codeVisible" @click="codeVisible = true"
+        >显示代码</Button
+      >
+      <Button v-show="codeVisible" @click="codeVisible = false"
+        >隐藏代码</Button
+      >
     </div>
-    <div class="demo-code" v-if="codeVisible">
-      <pre>xxxxxxxxxx</pre>
+    <div class="demo-code" v-show="codeVisible">
+      <pre>{{ code }}</pre>
     </div>
   </div>
 </template>
@@ -24,9 +28,13 @@ export default {
   components: {
     Button,
   },
-  setup() {
+  setup(props) {
     const codeVisible = ref(false)
-    return { codeVisible }
+    const title = ref('')
+    const code = ref(null)
+    title.value = props.component.__sourceCodeTitle
+    code.value = props.component.__sourceCode
+    return { codeVisible, title, code }
   },
 }
 </script>

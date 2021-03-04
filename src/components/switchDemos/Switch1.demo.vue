@@ -1,3 +1,4 @@
+<demo>基本用法</demo>
 <template>
   <Switch v-model:value="value" />
 </template>
