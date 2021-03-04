@@ -4,7 +4,7 @@
     <div class="demo-component">
       <component :is="component" />
     </div>
-    <div class="demo-options">
+    <div class="demo-actions">
       <Button @click="codeVisible = !codeVisible">
         {{ codeVisible ? '隐藏' : '显示' }}代码
       </Button>
@@ -47,19 +47,20 @@ $border-color: #a89e9e;
   border: 1px solid $border-color;
   border-radius: 3px;
   h2 {
-    margin: 20px;
+    padding: 8px 16px;
+    font-size: 20px;
   }
   &-component {
     border-top: 1px dashed $border-color;
-    padding: 20px;
+    padding: 16px;
   }
-  &-options {
+  &-actions {
     border-top: 1px dashed $border-color;
-    padding: 20px;
+    padding: 10px 16px;
   }
   &-code {
     border-top: 1px dashed $border-color;
-    padding: 20px;
+    padding: 8px 16px;
   }
 }
 </style>
