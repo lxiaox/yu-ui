@@ -143,6 +143,7 @@ $blue: #2d8cf0;
 
         .yu-dialog-title {
           font-size: 20px;
+          color: #17233d;
         }
 
         .yu-dialog-close {
@@ -179,11 +180,12 @@ $blue: #2d8cf0;
       }
 
       & > main {
-        padding: 14px 16px;
+        padding: 16px;
+        color: #515a6e;
       }
 
       & > footer {
-        padding: 14px 16px;
+        padding: 16px 18px;
         border-top: 1px solid $border-grey;
         text-align: right;
 

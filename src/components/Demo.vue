@@ -63,6 +63,9 @@ $border-color: #a89e9e;
   &-code {
     border-top: 1px dashed $border-color;
     padding: 8px 16px;
+    pre {
+      background: #5bc8bb14;
+    }
   }
 }
 </style>

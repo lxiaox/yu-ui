@@ -1,4 +1,4 @@
-<demo>禁用状态</demo>
+<demo>禁用开关</demo>
 <template>
   <Switch v-model:value="value4" disabled />
   <Switch v-model:value="value5" disabled />
