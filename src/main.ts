@@ -1,7 +1,7 @@
 import { createApp } from "vue";
+import "./lib/yu.scss";
 import App from "./App.vue";
 import "./index.scss";
-import "./lib/yu.scss";
 import router from "./router";
 import "github-markdown-css"
 import Demo from './components/Demo.vue'
