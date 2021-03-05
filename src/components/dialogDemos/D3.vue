@@ -12,10 +12,10 @@ export default {
     const showDialog = () => {
       openDialog({
         ok: () => {
-          console.log('ok2')
+          console.log('ok')
         },
         cancel: () => {
-          console.log('cancel2')
+          console.log('cancel')
           return false
         },
         // title: h('strong', 'slot title'),
