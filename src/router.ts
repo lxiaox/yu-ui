@@ -6,7 +6,7 @@ import ButtonDoc from "./components/ButtonDoc.vue";
 import DialogDoc from "./components/DialogDoc.vue";
 import TabsDoc from "./components/TabsDoc.vue";
 import Markdown from "./components/Markdown.vue"
-import{h} from 'vue'
+import { h } from 'vue'
 const renderMd = filename => h(Markdown,{path:`../markdown/${filename}.md`,key:filename})
 const history = createWebHashHistory();
 const router = createRouter({
