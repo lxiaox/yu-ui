@@ -3,17 +3,20 @@
     <div class="yu-tabs-nav" ref="navContainer">
       <div
         class="yu-tabs-nav-item"
-        :class="{ selected: t === selected }"
-        v-for="(t, index) in titles"
+        :class="{
+          selected: c.props.title === selected,
+          disabled: c.props.disabled || c.props.disabled === '',
+        }"
+        v-for="(c, index) in defaults"
         :key="index"
-        @click="select(t)"
+        @click="select(c)"
         :ref="
           (el) => {
-            if (t === selected) selectedItem = el
+            if (c.props.title === selected) selectedItem = el
           }
         "
       >
-        {{ t }}
+        {{ c.props.title }}
       </div>
       <div class="yu-tabs-nav-indicator" ref="indicator"></div>
     </div>
@@ -31,7 +34,7 @@
 </template>
 
 <script lang="ts">
-import { computed, onMounted, onUpdated, ref, watch, watchEffect } from 'vue'
+import { computed, onMounted, ref, watchEffect } from 'vue'
 import Tab from './Tab.vue'
 export default {
   props: {
@@ -57,6 +60,7 @@ export default {
       })
     })
     const defaults = context.slots.default()
+    console.log(defaults)
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
         throw Error('Tabs的子标签必须是Tab')
@@ -65,8 +69,9 @@ export default {
     const titles = defaults.map((tag) => {
       return tag.props.title
     })
-    const select = (title: string) => {
-      context.emit('update:selected', title)
+    const select = (c: any) => {
+      if (c.props.disabled || c.props.disabled === '') return
+      context.emit('update:selected', c.props.title)
     }
     const current = computed(() => {
       return defaults.find((tag) => tag.props.title === props.selected)
@@ -103,6 +108,10 @@ $border-color: #d9d9d9;
       }
       &.selected {
         color: $blue;
+      }
+      &.disabled {
+        cursor: default;
+        color: #ccc;
       }
     }
     &-indicator {
