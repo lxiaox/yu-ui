@@ -1,4 +1,3 @@
-import { ref } from 'vue'
 <template>
   <article class="markdown-body" v-html="content"></article>
 </template>
