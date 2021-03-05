@@ -22,7 +22,7 @@
           <use xlink:href="#icon-ts"></use>
         </svg>
         <h3>基于TypeScript</h3>
-        <p>源代码采用TypeScript编写</p>
+        <p>源代码采用 TypeScript 编写</p>
       </li>
       <li class="feature">
         <svg class="icon">
@@ -48,9 +48,9 @@ export default {
 .content {
   padding: 100px 0 50px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   color: #0a8e81cc;
 
   > .actions {
@@ -72,30 +72,25 @@ export default {
 }
 .feature-container {
   margin: 64px auto;
-  width: 400px;
-  @media (min-width: 800px) {
-    width: 800px;
-  }
-  @media (min-width: 1200px) {
-    width: 1200px;
-  }
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
-  align-content: space-between;
+  justify-content: center;
   .feature {
-    width: 400px;
     margin: 16px 0;
+    flex-basis: 324px;
     display: grid;
     grid-template-areas: 'icon title' 'icon text';
     grid-template-rows: 1fr auto;
-    grid-template-columns: 150px auto;
+    grid-template-columns: 76px auto;
+    padding: 0 16px;
+    @media (min-width: 800px) {
+      flex-basis: 400px;
+    }
 
     svg {
       width: 60px;
       height: 60px;
       grid-area: icon;
-      margin-left: 60px;
     }
     h3 {
       grid-area: title;
