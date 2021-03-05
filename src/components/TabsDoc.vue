@@ -1,32 +1,16 @@
 <template>
-  <h1>tabs示例</h1>
-  <Tabs v-model:selected="currentTabTitle">
-    <Tab title="香蕉">
-      <div>内容1</div>
-    </Tab>
-    <Tab title="火龙果">
-      <div>内容2</div>
-    </Tab>
-  </Tabs>
+  <Demo :component="T1"></Demo>
+  <Demo :component="T2"></Demo>
 </template>
 
 <script>
-import { ref } from 'vue'
-import Tabs from '../lib/Tabs.vue'
-import Tab from '../lib/Tab.vue'
+import T1 from './tabsDemos/T1.vue'
+import T2 from './tabsDemos/T2.vue'
 export default {
-  components: {
-    Tabs,
-    Tab,
-  },
   setup() {
-    const currentTabTitle = ref('火龙果')
-    return { currentTabTitle }
+    return { T1, T2 }
   },
 }
 </script>
 <style lang="scss">
-h1 {
-  margin-bottom: 20px;
-}
 </style>
