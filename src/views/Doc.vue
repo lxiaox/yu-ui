@@ -55,7 +55,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$w: 501px;
+$w: 600px;
 .content {
   aside {
     position: fixed;
@@ -108,7 +108,7 @@ $w: 501px;
       padding-left: 20px;
     }
   }
-  @media (min-width: $w) {
+  @media (min-width: $w + 1px) {
     //宽屏
     padding-left: 152px;
 

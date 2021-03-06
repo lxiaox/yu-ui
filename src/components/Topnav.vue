@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss">
 $h: 30px;
-$w: 501px;
+$w: 600px;
 
 .topnav-wrapper {
   background: #fff;
