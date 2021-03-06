@@ -6,8 +6,11 @@ import ButtonDoc from "./components/ButtonDoc.vue";
 import DialogDoc from "./components/DialogDoc.vue";
 import TabsDoc from "./components/TabsDoc.vue";
 import Markdown from "./components/Markdown.vue"
+import introMdToHtmlStr from "./markdown/intro.md"
+import installMdToHtmlStr from "./markdown/install.md"
+import getStartedMdToHtmlStr from "./markdown/getStarted.md"
 import { h } from 'vue'
-const renderMd = filename => h(Markdown,{path:`../markdown/${filename}.md`,key:filename})
+const renderMd = (mdtoHtmlStr,key)=> h(Markdown,{content:mdtoHtmlStr,key})
 const history = createWebHashHistory();
 const router = createRouter({
   history,
@@ -18,9 +21,9 @@ const router = createRouter({
       component: Doc,
       children: [
         { path: "", redirect: "/doc/intro" },
-        { path: "intro", component: renderMd('intro') },
-        { path: "install", component: renderMd('install') },
-        { path: "get-started", component: renderMd('getStarted') },
+        { path: "intro", component: renderMd(introMdToHtmlStr,'introMdToHtmlStr') },
+        { path: "install", component: renderMd(installMdToHtmlStr,'installMdToHtmlStr') },
+        { path: "get-started", component: renderMd(getStartedMdToHtmlStr,'getStartedMdToHtmlStr') },
         { path: "switch", component: SwitchDoc },
         { path: "button", component: ButtonDoc },
         { path: "dialog", component: DialogDoc },
