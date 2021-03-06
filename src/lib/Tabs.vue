@@ -68,7 +68,7 @@ export default {
     const titles = defaults.map((tag) => {
       return tag.props.title
     })
-    const select = (c: any) => {
+    const select = (c) => {
       if (c.props.disabled || c.props.disabled === '') return
       context.emit('update:selected', c.props.title)
     }
