@@ -59,10 +59,11 @@ $w: 600px;
 .content {
   aside {
     position: fixed;
-    width: 150px;
-    height: 100vh;
     top: 0;
     left: 0;
+    width: 150px;
+    height: 100vh;
+    overflow: auto;
     padding-top: 70px;
     transition: all 250ms;
     z-index: 9;
