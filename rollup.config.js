@@ -10,8 +10,8 @@ export default {
     globals: {
       vue: 'Vue'
     },
-    name: 'YU',
-    file: 'dist/lib/yu.js',
+    name: 'xiaoyu',
+    file: 'dist/lib/xiaoyu.js',
     format: 'umd',
     plugins: [terser()]
   },
