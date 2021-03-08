@@ -21,14 +21,14 @@
       <div class="yu-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="yu-tabs-content">
-      <component
+      <!-- <component
         class="yu-tabs-content-item"
         :class="{ selected: c.props.title === selected }"
         v-for="(c, index) in defaults"
         :is="c"
         :key="index"
-      />
-      <!-- <component :is="current" :key="current.props.title" /> -->
+      /> -->
+      <component :is="current" :key="current.props.title" />
     </div>
   </div>
 </template>
@@ -48,16 +48,20 @@ export default {
     const navContainer = ref<HTMLDivElement>(null)
 
     onMounted(() => {
-      watchEffect(() => {
-        // 获取标题宽度
-        const { width } = selectedItem.value.getBoundingClientRect()
-        //赋值
-        indicator.value.style.width = width + 'px'
-        //下划线left宽度
-        const { left: left1 } = navContainer.value.getBoundingClientRect()
-        const { left: left2 } = selectedItem.value.getBoundingClientRect()
-        indicator.value.style.left = left2 - left1 + 'px'
-      })
+      watchEffect(
+        () => {
+          console.log(props.selected)
+          // 获取标题宽度
+          const { width } = selectedItem.value.getBoundingClientRect()
+          //赋值
+          indicator.value.style.width = width + 'px'
+          //下划线left宽度
+          const { left: left1 } = navContainer.value.getBoundingClientRect()
+          const { left: left2 } = selectedItem.value.getBoundingClientRect()
+          indicator.value.style.left = left2 - left1 + 'px'
+        },
+        { flush: 'post' }
+      )
     })
     const defaults = context.slots.default()
     defaults.forEach((tag) => {
