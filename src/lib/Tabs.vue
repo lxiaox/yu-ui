@@ -50,7 +50,6 @@ export default {
     onMounted(() => {
       watchEffect(
         () => {
-          console.log(props.selected)
           // 获取标题宽度
           const { width } = selectedItem.value.getBoundingClientRect()
           //赋值
