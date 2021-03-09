@@ -1,16 +1,16 @@
 {
   "name": "xiaoyu-ui",
-  "version": "1.0.1",
+  "version": "0.0.0",
   "files": [
     "dist/lib/*"
   ],
-  "main": "dist/lib/xiaoyu.js",
+  "main": "dist/lib/yu.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
   },
   "resolutions": {
-    "node-sass": "npm:sass@^1.26.11"
+    "node-sass": "npm:sass@1.26.11"
   },
   "dependencies": {
     "github-markdown-css": "4.0.0",
