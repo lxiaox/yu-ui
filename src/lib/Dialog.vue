@@ -89,14 +89,12 @@ export default {
     }
     const ok = () => {
       // 返回false可阻止关闭
-      if (props.ok?.() !== false) {
-        close()
-      }
+      if (props.ok && props.ok() === false) return
+      close()
     }
     const cancel = () => {
-      if (props.cancel?.() !== false) {
-        close()
-      }
+      if (props.cancel && props.cancel() === false) return
+      close()
     }
     return {
       close,
