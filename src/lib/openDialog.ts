@@ -5,7 +5,7 @@ export const openDialog = (options) => {
   const { ok, cancel, overlayClosable, closable, titleText, okText, cancelText, headerVisible, footerVisible, title, content, footer } = options
   // 注销Dialog函数
   const close = () => {
-    app.unmount(div)
+    app.unmount()
     div.remove()
   }
   // 把dib添加到body上
