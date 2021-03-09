@@ -13,7 +13,7 @@ export default {
     name: 'xiaoyu',
     file: 'dist/lib/yu.js',
     format: 'umd',
-    plugins: [terser()],
+    plugins: [terser()]
   },
   plugins: [
     scss({ include: /\.scss$/, sass: dartSass }),
@@ -24,6 +24,6 @@ export default {
     }),
     vue({
       include: /\.vue$/,
-    }),
+    })
   ],
 }
