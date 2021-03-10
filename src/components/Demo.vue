@@ -19,7 +19,7 @@
 </template>
 <script lang="ts">
 import { ref } from 'vue'
-import Button from '../lib/Button.vue'
+import { Button } from '../lib/index'
 import 'prismjs'
 import 'prismjs/themes/prism.css'
 const Prism = (window as any).Prism
