@@ -43,9 +43,9 @@ export default {
     },
   },
   setup(props, context) {
-    const selectedItem = ref<HTMLDivElement>(null)
-    const indicator = ref<HTMLDivElement>(null)
-    const navContainer = ref<HTMLDivElement>(null)
+    const selectedItem = ref(null)
+    const indicator = ref(null)
+    const navContainer = ref(null)
 
     onMounted(() => {
       watchEffect(
