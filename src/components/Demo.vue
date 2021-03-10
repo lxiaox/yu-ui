@@ -41,7 +41,7 @@ export default {
 }
 </script>
 <style lang="scss">
-$border-color: #a89e9e;
+$border-color: #dddddd;
 .demo {
   border: 1px solid $border-color;
   border-radius: 3px;
