@@ -4,8 +4,7 @@
 </template>
 <script lang="ts">
 import { h } from 'vue'
-import { Button } from '../../lib/index'
-import { openDialog } from '../../lib/index'
+import { Button, openDialog } from '../../lib/index'
 export default {
   components: { Button },
   setup() {

@@ -12,8 +12,7 @@
 </template>
 <script lang="ts">
 import { ref } from 'vue'
-import { Button } from '../../lib/index'
-import { Dialog } from '../../lib/index'
+import { Button, Dialog } from '../../lib/index'
 export default {
   components: { Button, Dialog },
   setup() {
