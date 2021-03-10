@@ -2,11 +2,11 @@
 打开终端运行下列命令：
 
 ```
-npm install yu-ui
+npm install yuuyui
 ```
 或
 ```
-yarn add yu-ui
+yarn add yuuyui
 ```
 
 下一节：[开始使用](#/doc/get-started)

@@ -5,7 +5,8 @@
 引入YU UI
 
 ```
-import {Button, Tabs, Switch, Dialog} from "yu-ui"
+import {Button, Tabs, Switch, Dialog} from "yuuyui"
+import 'yuuyui/dist/lib/yu.css'
 ```
 
 代码示例：
@@ -15,9 +16,10 @@ import {Button, Tabs, Switch, Dialog} from "yu-ui"
   <div><Button>按钮</Button></div>
 </template>
 <script>
-  import {Button, Tabs, Switch, Dialog} from "yu-ui"
+  import {Button, Tabs, Tab, Switch, Dialog, openDIalog} from "yuuyui"
+  import 'yuuyui/dist/lib/yu.css'
   export default {
-    components: {Button}
+    components: {Button, Switch, Tabs, Tab, Dialog}
   }
 </script>
 ```
