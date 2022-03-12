@@ -9,7 +9,7 @@
         <router-link to="/doc">开始</router-link>
       </p>
     </div>
-    <ui class="feature-container">
+    <ul class="feature-container">
       <li class="feature">
         <svg class="icon">
           <use xlink:href="#icon-vue3"></use>
@@ -31,7 +31,7 @@
         <h3>代码易读</h3>
         <p>每个组件的源代码都极其简洁</p>
       </li>
-    </ui>
+    </ul>
   </div>
 </template>
 
