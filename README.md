@@ -6,7 +6,7 @@
 
 命令：`yarn dev` 或 `npm run dev`
 
-### 2 打包项目
+### 2 打包项目，发布官网
 
 `vite build`
 
