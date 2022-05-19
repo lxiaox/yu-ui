@@ -114,7 +114,7 @@ $border-color: #d9d9d9;
         color: $blue;
       }
       &.disabled {
-        cursor: default;
+        cursor: not-allowed;
         color: #ccc;
       }
     }
