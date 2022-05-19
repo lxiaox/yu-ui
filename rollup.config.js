@@ -7,7 +7,7 @@ import esbuild from 'rollup-plugin-esbuild'
 import vue from 'rollup-plugin-vue'
 import scss from 'rollup-plugin-scss'
 import dartSass from 'sass'
-import { terser } from 'rollup-plugin-terser'
+import { terser } from 'rollup-plugin-terser' // 压缩代码
 
 export default {
   input: 'src/lib/index.ts', //入口文件

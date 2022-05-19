@@ -18,6 +18,7 @@
       >
         {{ c.props.title }}
       </div>
+      <!-- 下滑块 -->
       <div class="yu-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="yu-tabs-content">
@@ -57,6 +58,7 @@ export default {
           //下划线left宽度
           const { left: left1 } = navContainer.value.getBoundingClientRect()
           const { left: left2 } = selectedItem.value.getBoundingClientRect()
+          // 用选中元素左边减去整个容器的左边
           indicator.value.style.left = left2 - left1 + 'px'
         },
         { flush: 'post' }
