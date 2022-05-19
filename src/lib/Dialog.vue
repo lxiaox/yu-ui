@@ -118,17 +118,16 @@ $blue: #2d8cf0;
   top: 0;
   left: 0;
   background: fade_out(black, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .yu-dialog-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+    min-width: 250px;
+    max-width: 96%;
     .yu-dialog {
       background: #fff;
       border-radius: 5px;
-      width: 300px;
       box-shadow: 0 0 10px fade_out(black, 0.5);
 
       & > header {
