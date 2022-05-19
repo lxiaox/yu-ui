@@ -1,14 +1,14 @@
 <demo>禁用某项</demo>
 <template>
   <Tabs v-model:selected="currentTabTitle">
-    <Tab title="香蕉">
-      <div>香蕉</div>
+    <Tab title="标签一">
+      <div>标签一的内容</div>
     </Tab>
-    <Tab title="火龙果">
-      <div>火龙果</div>
+    <Tab title="标签二" disabled>
+      <div>标签二的内容</div>
     </Tab>
-    <Tab title="西红柿" disabled>
-      <div>西红柿</div>
+    <Tab title="标签三">
+      <div>标签三的内容</div>
     </Tab>
   </Tabs>
 </template>
@@ -22,7 +22,7 @@ export default {
     Tab,
   },
   setup() {
-    const currentTabTitle = ref('香蕉')
+    const currentTabTitle = ref('标签一')
     return { currentTabTitle }
   },
 }
