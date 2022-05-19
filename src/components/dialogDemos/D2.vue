@@ -5,28 +5,35 @@
   <Dialog v-model:visible="visible1">
     <template v-slot:title>
       <p style="text-align: center">
-        <strong style="font-size: 20px; color: red">slot标题(使用插槽)</strong>
+        <strong style="font-size: 20px; color: green">自定义标题</strong>
       </p>
     </template>
-    <p style="color: green">slot内容</p>
+
+    <div style="width: 100%; height: 100px; font-size: 20px">
+      <p>自定义内容</p>
+      <p>(对话框的宽高在合适的范围内可以根据内容自适应)</p>
+    </div>
+
     <template v-slot:footer>
-      <Button @click="close">slot按钮(使用插槽)</Button>
+      <Button @click="close">自定义按钮</Button>
     </template>
   </Dialog>
   <!-- 不带标题栏 -->
-  <Button @click="visible2 = true">不带标题栏</Button>
+  <Button @click="visible2 = true">隐藏标题栏</Button>
   <Dialog v-model:visible="visible2" :header-visible="false">
-    <p>不带标题栏</p>
+    <p style="width: 400px; height: 100px; font-size: 24px">隐藏标题栏</p>
   </Dialog>
   <!-- 不带页脚 -->
-  <Button @click="visible3 = true">不带页脚</Button>
+  <Button @click="visible3 = true">隐藏页脚</Button>
   <Dialog v-model:visible="visible3" :footer-visible="false">
-    <p>不带页脚</p>
+    <p style="width: 400px; height: 100px; font-size: 24px">隐藏页脚</p>
   </Dialog>
   <!-- 禁用右上角关闭 -->
-  <Button @click="visible4 = true">禁用右上角关闭</Button>
+  <Button @click="visible4 = true">禁用右上角关闭按钮</Button>
   <Dialog v-model:visible="visible4" :closable="false">
-    <p>禁用右上角关闭</p>
+    <p style="width: 400px; height: 100px; font-size: 16px">
+      禁用右上角关闭按钮
+    </p>
   </Dialog>
 </template>
 <script lang="ts">

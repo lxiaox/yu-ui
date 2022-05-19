@@ -18,7 +18,11 @@ export default {
           return false
         },
         // title: h('strong', 'slot title'),
-        content: h('h1', 'slot内容'),
+        content: h(
+          'p',
+          { style: 'font-size:16px;' },
+          '在JS中使用 openDialog 方法打开对话框，不需要在模板中书写<Dialog>组件'
+        ),
         overlayClosable: true,
         headerVisible: true,
         okText: '点击关闭',
