@@ -2,7 +2,7 @@
   <div>
     <Topnav :isDoc="false" />
     <div class="content">
-      <h1>小鱼UI</h1>
+      <h1>YU UI</h1>
       <h2>基于 VUE3 的 UI 框架</h2>
       <p class="actions">
         <a href="//github.com/lxiaox/yu-ui" target="_blank">GitHub</a>
@@ -19,10 +19,10 @@
       </li>
       <li class="feature">
         <svg class="icon">
-          <use xlink:href="#icon-ts"></use>
+          <use xlink:href="#icon-zj"></use>
         </svg>
-        <h3>基于TypeScript</h3>
-        <p>源代码采用 TypeScript 编写</p>
+        <h3>UI 组件</h3>
+        <p>复用度高、扩展性好的 UI 组件</p>
       </li>
       <li class="feature">
         <svg class="icon">
